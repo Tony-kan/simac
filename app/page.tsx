@@ -1,4 +1,5 @@
-import Footerpage from "@/components/shared/footerV/page";
+import Footer from "@/components/shared/footer/page";
+import Footerpage from "@/components/shared/footer/page";
 import Image from "next/image";
 
 export default function Home() {
@@ -52,10 +53,7 @@ export default function Home() {
           </a>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-[24px]">
-        {/* <QuickLinks /> */}
-        <Footerpage />
-      </footer>
+      <Footer />
     </div>
   );
 }
