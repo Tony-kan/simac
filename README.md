@@ -1,36 +1,140 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SIMAC - Official Website Project
 
-## Getting Started
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/your-username/simac-website/main.yml?branch=main&style=for-the-badge)
+![License](https://img.shields.io/github/license/your-username/simac-website?style=for-the-badge)
+![Issues](https://img.shields.io/github/issues/your-username/simac-website?style=for-the-badge)
 
-First, run the development server:
+This repository contains the source code for the official website of the **Simmys Institute of Music, Arts, and Culture (SIMAC)**. The website serves as a digital gateway for students, parents, donors, and the community to engage with our mission of fostering artistic excellence in Malawi.
 
-```bash
+## SIMAC Website Screenshot
+
+<img src="/public/simac_screenshot.png" width="720" height="576" />
+
+## 📋 Table of Contents
+
+- [Project Overview](#-project-overview)
+- [Features](#-features)
+- [Technology Stack](#-technology-stack)
+- [Getting Started](#-getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation & Setup](#installation--setup)
+- [Running the Project](#-running-the-project)
+- [How to Contribute](#-how-to-contribute)
+- [License](#-license)
+- [Contact](#-contact)
+
+## 🌟 Project Overview
+
+SIMAC is dedicated to nurturing creativity, preserving cultural heritage, and fostering excellence in music, arts, and culture education. This website provides a comprehensive platform to showcase our programs, manage events, share news, and collect donations to support our cause, including the **Saving Children at Risk (SCaR) Project**.
+
+## ✨ Features
+
+- ✅ **Dynamic Content:** Pages for Home, About, Affiliates, Programs, Events, Blog, and News.
+- 📅 **Event Management:** An event calendar with details for upcoming workshops and concerts, including RSVP functionality.
+- 💳 **Secure Donation System:** Integrated payment gateway for one-time and recurring donations to support specific programs or general funds.
+- 🛍️ **E-commerce Store:** A dedicated section for selling musical instruments and branded merchandise.
+- 📝 **Blog & News Feed:** Keep the community updated with articles, interviews, and press releases.
+- 📱 **Fully Responsive:** A mobile-first design that ensures a seamless experience on all devices.
+- 🔍 **SEO Optimized:** Structured for high visibility on search engines to reach a wider audience.
+
+## 🚀 Technology Stack
+
+- **Frontend:** [React](https://reactjs.org/) (with [Next.js](https://nextjs.org/))
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **CMS:** Headless CMS (e.g., [Strapi](https://strapi.io/), [Contentful](https://www.contentful.com/)) for easy content management.
+- **Deployment:** [Vercel](https://vercel.com/) / [Netlify](https://www.netlify.com/)
+
+## 🏁 Getting Started
+
+Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+
+Make sure you have the following installed on your system:
+
+- [Node.js](https://nodejs.org/en/) (v16 or higher)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+- [Git](https://git-scm.com/)
+
+### Installation & Setup
+
+1.  **Clone the repository:**
+
+    ```sh
+    git clone https://github.com/your-username/simac-website.git
+    ```
+
+2.  **Navigate into the project directory:**
+
+    ```sh
+    cd simac-website
+    ```
+
+3.  **Install dependencies:**
+
+    ```sh
+    npm install
+    # or
+    yarn install
+    ```
+
+4.  **Set up environment variables:**
+    Create a `.env.local` file in the root of the project by copying the example file:
+
+    ```sh
+    cp .env.example .env.local
+    ```
+
+    Now, open `.env.local` and add the necessary API keys and endpoints for your Headless CMS, payment gateway, etc.
+
+    ```env
+    # Example for Strapi
+    NEXT_PUBLIC_STRAPI_API_URL=http://localhost:1337
+
+    # Example for a payment provider
+    NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_your_key_here
+    STRIPE_SECRET_KEY=sk_your_secret_here
+    ```
+
+## 🏃 Running the Project
+
+To run the development server, use the following command:
+
+```sh
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🤝 How to Contribute
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To contribute to this project, please follow these steps:
 
-## Learn More
+1.  **Fork the Project:** Click the 'Fork' button at the top right of this page.
+2.  **Create your Feature Branch:**
+    ```sh
+    git checkout -b feature/YourAmazingFeature
+    ```
+3.  **Commit your Changes:**
+    ```sh
+    git commit -m 'Add some AmazingFeature'
+    ```
+4.  **Push to the Branch:**
+    ```sh
+    git push origin feature/YourAmazingFeature
+    ```
+5.  **Open a Pull Request:** Go to your fork on GitHub and click the 'New Pull Request' button.
 
-To learn more about Next.js, take a look at the following resources:
+Please make sure to update tests as appropriate and follow the project's coding standards.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📜 License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This project is distributed under the MIT License. See `LICENSE.txt` for more information.
 
-## Deploy on Vercel
+## 📧 Contact
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+SIMAC Institute - [simacmalawi.info@gmail.com](mailto:simacmalawi.info@gmail.com)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Project Link: [https://github.com/your-username/simac-website](https://github.com/your-username/simac-website)
