@@ -121,7 +121,7 @@ const MainHeader = () => {
   }: INavLinkProps) => (
     <Link
       href={href}
-      className={`text-gray-700 hover:text-blue-600 transition-colors duration-300 ${className}`}
+      className={`text-gray-700 hover:text-[#5C1B23] transition-colors duration-300 ${className}`}
       onClick={onClick}
     >
       {children}
@@ -133,7 +133,7 @@ const MainHeader = () => {
       <header className="relative border-b border-gray-300  bg-white h-[12vh] min-h-[80px] lg:h-[18vh] lg:min-h-[120px] shadow-sm">
         {/* Desktop header  */}
         <div className="container px-6 h-full max-w-screen flex justify-between items-center gap-4">
-          <div className="flex-shrink-0 size-18 md:size-20 lg:size-30">
+          <div className="flex-shrink-0 ml-4 lg:ml-8 size-18 md:size-22 lg:size-32">
             <Link
               href="/"
               className="text-2xl lg:text-3xl font-bold text-gray-800"
@@ -168,7 +168,7 @@ const MainHeader = () => {
                             onHoverStart={() => setIsQuickLinksOpen(true)}
                             onHoverEnd={() => setIsQuickLinksOpen(false)}
                           >
-                            <button className="flex items-center gap-1 hover:text-blue-600">
+                            <button className="flex items-center gap-1 hover:text-[#5C1B23]">
                               {item.title}
                               <motion.div
                                 animate={{ rotate: isQuickLinksOpen ? 180 : 0 }}
@@ -207,7 +207,7 @@ const MainHeader = () => {
                       <button
                         onClick={() => setIsSearchOpen(true)}
                         aria-label="Open search"
-                        className="hover:text-blue-600"
+                        className="hover:text-[#5C1B23]"
                       >
                         <Search size={18} />
                       </button>
@@ -228,14 +228,14 @@ const MainHeader = () => {
                     <button
                       onClick={() => setIsSearchOpen(true)}
                       aria-label="Open search"
-                      className="text-gray-600 hover:text-blue-600"
+                      className="text-gray-600 hover:text-[#5C1B23]"
                     >
                       <Search size={24} />
                     </button>
                     <button
                       onClick={() => setIsMobileMenuOpen(true)}
                       aria-label="Open menu"
-                      className="text-gray-600 hover:text-blue-600"
+                      className="text-gray-600 hover:text-[#5C1B23]"
                     >
                       <Menu size={28} />
                     </button>
@@ -284,7 +284,7 @@ const MainHeader = () => {
             initial="closed"
             animate="open"
             exit="closed"
-            className="fixed inset-0 bg-white z-50 lg:hidden"
+            className="fixed inset-0 bg-white z-50 px-8 lg:hidden"
           >
             <div className="flex justify-between items-center p-4 border-b">
               <h2 className="font-bold text-xl">Menu</h2>
@@ -329,7 +329,7 @@ const MainHeader = () => {
                         onClick={() =>
                           setIsMobileQuickLinksOpen(!isMobileQuickLinksOpen)
                         }
-                        className="w-full flex justify-between items-center text-base text-gray-500 py-1 hover:text-blue-600 transition-colors"
+                        className="w-full flex justify-between items-center text-base text-gray-500 py-1 hover:text-[#5C1B23] transition-colors"
                       >
                         <span>{item.title}</span>
                         <motion.div
