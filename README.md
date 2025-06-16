@@ -6,8 +6,9 @@
 
 This repository contains the source code for the official website of the **Simmys Institute of Music, Arts, and Culture (SIMAC)**. The website serves as a digital gateway for students, parents, donors, and the community to engage with our mission of fostering artistic excellence in Malawi.
 
-SIMAC Website Screenshot
-<img src="/public/simac_screenshot.png" width="1280" height="720" />
+## SIMAC Website Screenshot
+
+<img src="/public/simac_screenshot.png" width="720" height="576" />
 
 ## 📋 Table of Contents
 
