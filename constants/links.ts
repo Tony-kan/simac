@@ -68,13 +68,8 @@ export const quickLinksDropdown = [
   },
   {
     id: 3,
-    title: "Events",
-    url: "/events",
-  },
-  {
-    id: 4,
-    title: "navigation",
-    url: "/blog",
+    title: "FAQs",
+    url: "/faqs",
   },
 ];
 export const footerLinks = [
