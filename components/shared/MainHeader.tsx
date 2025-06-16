@@ -9,6 +9,8 @@ import React, { useState, useEffect } from "react";
 import { Search, Menu, X, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+import { Simac_Logo } from "@/constants/images";
 
 //Todo: create a mobile_tablet nav,desktop nav
 //Todo: make it responsive - mobile first. Add smooth framer animations/transitions
@@ -128,15 +130,21 @@ const MainHeader = () => {
 
   return (
     <>
-      <header className="relative border-b bg-white h-[12vh] min-h-[80px] lg:h-[18vh] lg:min-h-[120px] shadow-sm">
+      <header className="relative border-b border-gray-300  bg-white h-[12vh] min-h-[80px] lg:h-[18vh] lg:min-h-[120px] shadow-sm">
         {/* Desktop header  */}
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full flex justify-between items-center gap-4">
-          <div className="flex-shrink-0">
+        <div className="container px-6 h-full max-w-screen flex justify-between items-center gap-4">
+          <div className="flex-shrink-0 size-18 md:size-20 lg:size-30">
             <Link
               href="/"
               className="text-2xl lg:text-3xl font-bold text-gray-800"
             >
-              Logo
+              <Image
+                src={Simac_Logo}
+                alt="Logo"
+                width={40}
+                height={40}
+                className="w-auto h-auto"
+              />
             </Link>
           </div>
           <div className="flex-grow flex justify-end h-full">
@@ -150,8 +158,8 @@ const MainHeader = () => {
                   exit="exit"
                   className="w-full h-full"
                 >
-                  <div className="hidden lg:flex flex-col justify-between h-full py-4">
-                    <div className="flex justify-end items-center gap-6 text-sm text-gray-500">
+                  <div className="hidden lg:flex flex-col justify-between h-full mr-4">
+                    <div className="flex justify-end items-center gap-6 mt-8 text-sm text-gray-500">
                       {subNavLinks.map((item) =>
                         item.title === "Quick Links" ? (
                           <motion.div
@@ -204,7 +212,7 @@ const MainHeader = () => {
                         <Search size={18} />
                       </button>
                     </div>
-                    <nav className="flex justify-end items-center gap-6 font-medium">
+                    <nav className="flex justify-end items-center gap-6 mb-4 font-medium">
                       {mainNavLinks.map((item) => (
                         <NavLink
                           key={item.id}
@@ -246,7 +254,7 @@ const MainHeader = () => {
                     <input
                       type="search"
                       placeholder="Search and press enter..."
-                      className="w-full pl-4 pr-12 py-3 border-2 border-gray-300 focus:border-blue-500 focus:outline-none rounded-full text-base lg:text-lg transition-colors"
+                      className="w-full pl-4 pr-12 py-2 border-2 border-gray-300 focus:border-blue-500 focus:outline-none rounded-md text-base lg:text-lg transition-colors"
                       autoFocus
                     />
                     <div className="absolute top-1/2 right-4 -translate-y-1/2 flex items-center gap-2">
