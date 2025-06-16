@@ -58,18 +58,23 @@ export const subNavLinks = [
 export const quickLinksDropdown = [
   {
     id: 1,
-    title: "Quick Links",
-    url: "/quicklinks",
+    title: "Register",
+    url: "/register",
   },
   {
     id: 2,
-    title: "Donate",
-    url: "/donate",
+    title: "Login",
+    url: "/login",
   },
   {
     id: 3,
-    title: "Store",
-    url: "/store",
+    title: "Events",
+    url: "/events",
+  },
+  {
+    id: 4,
+    title: "navigation",
+    url: "/blog",
   },
 ];
 export const footerLinks = [

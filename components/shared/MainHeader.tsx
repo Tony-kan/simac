@@ -217,7 +217,7 @@ const MainHeader = () => {
                         <NavLink
                           key={item.id}
                           href={item.url}
-                          className="text-base"
+                          className="text-base font-semibold"
                         >
                           {item.title}
                         </NavLink>
@@ -307,7 +307,7 @@ const MainHeader = () => {
                   <NavLink
                     onClick={() => setIsMobileMenuOpen(false)}
                     href={item.url}
-                    className="text-lg py-2 block w-full"
+                    className="text-lg py-2 block w-full font-semibold"
                   >
                     {item.title}
                   </NavLink>
@@ -329,7 +329,7 @@ const MainHeader = () => {
                         onClick={() =>
                           setIsMobileQuickLinksOpen(!isMobileQuickLinksOpen)
                         }
-                        className="w-full flex justify-between items-center text-base text-gray-500 py-1 hover:text-[#5C1B23] transition-colors"
+                        className="w-full flex justify-between items-center text-base font-semibold text-gray-500 py-1 hover:text-[#5C1B23] transition-colors"
                       >
                         <span>{item.title}</span>
                         <motion.div
@@ -365,7 +365,7 @@ const MainHeader = () => {
                     <NavLink
                       onClick={() => setIsMobileMenuOpen(false)}
                       href={item.url}
-                      className="text-base text-gray-500 py-1 block w-full"
+                      className="text-base text-gray-500 py-1 block w-full font-semibold"
                     >
                       {item.title}
                     </NavLink>

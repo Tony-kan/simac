@@ -3,19 +3,30 @@
 exports[`MainHeader component renders correctly 1`] = `
 <div>
   <header
-    class="relative border-b bg-white h-[12vh] min-h-[80px] lg:h-[18vh] lg:min-h-[120px] shadow-sm"
+    class="relative border-b border-gray-300  bg-white h-[12vh] min-h-[80px] lg:h-[18vh] lg:min-h-[120px] shadow-sm"
   >
     <div
-      class="container mx-auto px-4 sm:px-6 lg:px-8 h-full flex justify-between items-center gap-4"
+      class="container px-6 h-full max-w-screen flex justify-between items-center gap-4"
     >
       <div
-        class="flex-shrink-0"
+        class="flex-shrink-0 ml-4 lg:ml-8 size-18 md:size-22 lg:size-32"
       >
         <a
           class="text-2xl lg:text-3xl font-bold text-gray-800"
           href="/"
         >
-          Logo
+          <img
+            alt="Logo"
+            class="w-auto h-auto"
+            data-nimg="1"
+            decoding="async"
+            height="40"
+            loading="lazy"
+            src="/_next/image?url=%2Fimg.jpg&w=96&q=75"
+            srcset="/_next/image?url=%2Fimg.jpg&w=48&q=75 1x, /_next/image?url=%2Fimg.jpg&w=96&q=75 2x"
+            style="color: transparent;"
+            width="40"
+          />
         </a>
       </div>
       <div
@@ -26,16 +37,16 @@ exports[`MainHeader component renders correctly 1`] = `
           style="opacity: 0;"
         >
           <div
-            class="hidden lg:flex flex-col justify-between h-full py-4"
+            class="hidden lg:flex flex-col justify-between h-full mr-4"
           >
             <div
-              class="flex justify-end items-center gap-6 text-sm text-gray-500"
+              class="flex justify-end items-center gap-6 mt-8 text-sm text-gray-500"
             >
               <div
                 class="relative"
               >
                 <button
-                  class="flex items-center gap-1 hover:text-blue-600"
+                  class="flex items-center gap-1 hover:text-[#5C1B23]"
                 >
                   Quick Links
                   <div>
@@ -60,20 +71,20 @@ exports[`MainHeader component renders correctly 1`] = `
                 </button>
               </div>
               <a
-                class="text-gray-700 hover:text-blue-600 transition-colors duration-300 "
+                class="text-gray-700 hover:text-[#5C1B23] transition-colors duration-300 "
                 href="/donate"
               >
                 Donate
               </a>
               <a
-                class="text-gray-700 hover:text-blue-600 transition-colors duration-300 "
+                class="text-gray-700 hover:text-[#5C1B23] transition-colors duration-300 "
                 href="/store"
               >
                 Store
               </a>
               <button
                 aria-label="Open search"
-                class="hover:text-blue-600"
+                class="hover:text-[#5C1B23]"
               >
                 <svg
                   aria-hidden="true"
@@ -100,46 +111,46 @@ exports[`MainHeader component renders correctly 1`] = `
               </button>
             </div>
             <nav
-              class="flex justify-end items-center gap-6 font-medium"
+              class="flex justify-end items-center gap-6 mb-4 font-medium"
             >
               <a
-                class="text-gray-700 hover:text-blue-600 transition-colors duration-300 text-base"
+                class="text-gray-700 hover:text-[#5C1B23] transition-colors duration-300 text-base"
                 href="/about"
               >
                 About
               </a>
               <a
-                class="text-gray-700 hover:text-blue-600 transition-colors duration-300 text-base"
+                class="text-gray-700 hover:text-[#5C1B23] transition-colors duration-300 text-base"
                 href="/programs"
               >
                 Programs
               </a>
               <a
-                class="text-gray-700 hover:text-blue-600 transition-colors duration-300 text-base"
+                class="text-gray-700 hover:text-[#5C1B23] transition-colors duration-300 text-base"
                 href="/events"
               >
                 News & Events
               </a>
               <a
-                class="text-gray-700 hover:text-blue-600 transition-colors duration-300 text-base"
+                class="text-gray-700 hover:text-[#5C1B23] transition-colors duration-300 text-base"
                 href="/affiliates"
               >
                 Affiliates
               </a>
               <a
-                class="text-gray-700 hover:text-blue-600 transition-colors duration-300 text-base"
+                class="text-gray-700 hover:text-[#5C1B23] transition-colors duration-300 text-base"
                 href="/blog"
               >
                 Blog
               </a>
               <a
-                class="text-gray-700 hover:text-blue-600 transition-colors duration-300 text-base"
+                class="text-gray-700 hover:text-[#5C1B23] transition-colors duration-300 text-base"
                 href="/gallery"
               >
                 Gallery
               </a>
               <a
-                class="text-gray-700 hover:text-blue-600 transition-colors duration-300 text-base"
+                class="text-gray-700 hover:text-[#5C1B23] transition-colors duration-300 text-base"
                 href="/contact-us"
               >
                 Contact
@@ -151,7 +162,7 @@ exports[`MainHeader component renders correctly 1`] = `
           >
             <button
               aria-label="Open search"
-              class="text-gray-600 hover:text-blue-600"
+              class="text-gray-600 hover:text-[#5C1B23]"
             >
               <svg
                 aria-hidden="true"
@@ -178,7 +189,7 @@ exports[`MainHeader component renders correctly 1`] = `
             </button>
             <button
               aria-label="Open menu"
-              class="text-gray-600 hover:text-blue-600"
+              class="text-gray-600 hover:text-[#5C1B23]"
             >
               <svg
                 aria-hidden="true"
