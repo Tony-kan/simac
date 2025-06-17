@@ -17,6 +17,7 @@ const Newsletter = () => {
     return regex.test(email);
   };
 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -63,7 +64,8 @@ const Newsletter = () => {
   };
 
   return (
-    <div className="bg-gray-800 p-10 rounded-lg">
+    // Todo: added the padding of 10
+    <div className="bg-gray-900 p-10">
       <h3 className="text-2xl font-bold mb-4 italic">Subscribe Newsletter</h3>
       <p className="text-gray-300 mb-4 text-xl">
         The latest events, news, ideas and updates
@@ -76,7 +78,7 @@ const Newsletter = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email address"
-            className="bg-white text-black px-4 py-2 rounded-l-md w-full border border-gray-700 focus:outline-none focus:ring-1 focus:ring-orange-300"
+            className="bg-white text-black px-10 py-2 rounded-l-md w-full border border-gray-700 focus:outline-none focus:ring-1 focus:ring-orange-300"
             required
             disabled={isSubmitting}
           />

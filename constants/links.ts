@@ -59,23 +59,23 @@ export const quickLinks = [
 export const socialLinks = [
   {
     id: 1,
-    icon: "",
-    url: "/facebook",
+    icon: "facebook",
+    url: "#", 
   },
   {
     id: 2,
-    icon: "",
-    url: "/twitter",
+    icon: "twitter",
+    url: "#",
   },
   {
     id: 3,
-    icon: "",
-    url: "/youtube",
+    icon: "youtube",
+    url: "#",
   },
   {
     id: 4,
-    icon: "",
-    url: "/instagram",
+    icon: "instagram",
+    url: "#",
   },
 ];
 
