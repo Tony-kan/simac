@@ -11,6 +11,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { Simac_Logo } from "@/constants/images";
+import { usePathname } from "next/navigation";
 
 //Todo: create a mobile_tablet nav,desktop nav
 //Todo: make it responsive - mobile first. Add smooth framer animations/transitions
@@ -90,6 +91,8 @@ const MainHeader = () => {
   const [isQuickLinksOpen, setIsQuickLinksOpen] = useState(false);
   const [isMobileQuickLinksOpen, setIsMobileQuickLinksOpen] = useState(false);
 
+  const pathname = usePathname();
+
   // Effect to handle body scroll lock for mobile menu
   useEffect(() => {
     document.body.style.overflow = isMobileMenuOpen ? "hidden" : "auto";
@@ -118,15 +121,26 @@ const MainHeader = () => {
     children,
     className = "",
     onClick = () => {},
-  }: INavLinkProps) => (
-    <Link
-      href={href}
-      className={`text-gray-700 hover:text-[#5C1B23] transition-colors duration-300 ${className}`}
-      onClick={onClick}
-    >
-      {children}
-    </Link>
-  );
+  }: INavLinkProps) => {
+    const isActive = pathname === href;
+    return (
+      <Link
+        href={href}
+        className={`
+          transition-colors duration-300
+          ${
+            isActive
+              ? "text-[#5C1B23] font-bold"
+              : "text-gray-700 hover:text-[#5C1B23]"
+          }
+          ${className}
+        `}
+        onClick={onClick}
+      >
+        {children}
+      </Link>
+    );
+  };
 
   return (
     <>
@@ -284,9 +298,9 @@ const MainHeader = () => {
             initial="closed"
             animate="open"
             exit="closed"
-            className="fixed inset-0 bg-white z-50 px-8 lg:hidden"
+            className="fixed inset-0 bg-white z-50 flex flex-col px-8 lg:hidden"
           >
-            <div className="flex justify-between items-center p-4 border-b">
+            <div className="flex-shrink-0 flex justify-between items-center p-4 border-b">
               <h2 className="font-bold text-xl">Menu</h2>
               <button
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -295,84 +309,88 @@ const MainHeader = () => {
                 <X size={28} />
               </button>
             </div>
-            <motion.nav
-              variants={mobileLinkContainerVariants}
-              initial="closed"
-              animate="open"
-              className="flex flex-col p-4 space-y-2"
-            >
-              {/* Main Links */}
-              {mainNavLinks.map((item) => (
-                <motion.div key={item.id} variants={mobileLinkVariants}>
-                  <NavLink
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    href={item.url}
-                    className="text-lg py-2 block w-full font-semibold"
-                  >
-                    {item.title}
-                  </NavLink>
-                </motion.div>
-              ))}
-
-              <div className="border-t my-4"></div>
-
-              {/* Sub Links with Collapsible "Quick Links" */}
-              {subNavLinks.map((item) => (
-                <motion.div
-                  key={item.id}
-                  variants={mobileLinkVariants}
-                  className="overflow-hidden"
-                >
-                  {item.title === "Quick Links" ? (
-                    <>
-                      <button
-                        onClick={() =>
-                          setIsMobileQuickLinksOpen(!isMobileQuickLinksOpen)
-                        }
-                        className="w-full flex justify-between items-center text-base font-semibold text-gray-500 py-1 hover:text-[#5C1B23] transition-colors"
-                      >
-                        <span>{item.title}</span>
-                        <motion.div
-                          animate={{ rotate: isMobileQuickLinksOpen ? 180 : 0 }}
-                        >
-                          <ChevronDown size={20} />
-                        </motion.div>
-                      </button>
-                      <AnimatePresence>
-                        {isMobileQuickLinksOpen && (
-                          <motion.div
-                            variants={collapsibleVariants}
-                            initial="closed"
-                            animate="open"
-                            exit="closed"
-                            className="flex flex-col pl-4 mt-1"
-                          >
-                            {quickLinksDropdown.map((link) => (
-                              <NavLink
-                                key={link.id}
-                                href={link.url}
-                                onClick={() => setIsMobileMenuOpen(false)}
-                                className="py-2 text-sm block w-full"
-                              >
-                                {link.title}
-                              </NavLink>
-                            ))}
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </>
-                  ) : (
+            <div className="flex-grow overflow-y-auto">
+              <motion.nav
+                variants={mobileLinkContainerVariants}
+                initial="closed"
+                animate="open"
+                className="flex flex-col p-4 space-y-2"
+              >
+                {/* Main Links */}
+                {mainNavLinks.map((item) => (
+                  <motion.div key={item.id} variants={mobileLinkVariants}>
                     <NavLink
                       onClick={() => setIsMobileMenuOpen(false)}
                       href={item.url}
-                      className="text-base text-gray-500 py-1 block w-full font-semibold"
+                      className="text-lg py-2 block w-full font-semibold"
                     >
                       {item.title}
                     </NavLink>
-                  )}
-                </motion.div>
-              ))}
-            </motion.nav>
+                  </motion.div>
+                ))}
+
+                <div className="border-t my-4"></div>
+
+                {/* Sub Links with Collapsible "Quick Links" */}
+                {subNavLinks.map((item) => (
+                  <motion.div
+                    key={item.id}
+                    variants={mobileLinkVariants}
+                    className="overflow-hidden"
+                  >
+                    {item.title === "Quick Links" ? (
+                      <>
+                        <button
+                          onClick={() =>
+                            setIsMobileQuickLinksOpen(!isMobileQuickLinksOpen)
+                          }
+                          className="w-full flex justify-between items-center text-base font-semibold text-gray-500 py-1 hover:text-[#5C1B23] transition-colors"
+                        >
+                          <span>{item.title}</span>
+                          <motion.div
+                            animate={{
+                              rotate: isMobileQuickLinksOpen ? 180 : 0,
+                            }}
+                          >
+                            <ChevronDown size={20} />
+                          </motion.div>
+                        </button>
+                        <AnimatePresence>
+                          {isMobileQuickLinksOpen && (
+                            <motion.div
+                              variants={collapsibleVariants}
+                              initial="closed"
+                              animate="open"
+                              exit="closed"
+                              className="flex flex-col pl-4 mt-1"
+                            >
+                              {quickLinksDropdown.map((link) => (
+                                <NavLink
+                                  key={link.id}
+                                  href={link.url}
+                                  onClick={() => setIsMobileMenuOpen(false)}
+                                  className="py-2 text-sm block w-full"
+                                >
+                                  {link.title}
+                                </NavLink>
+                              ))}
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </>
+                    ) : (
+                      <NavLink
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        href={item.url}
+                        className="text-base text-gray-500 py-1 block w-full font-semibold"
+                      >
+                        {item.title}
+                      </NavLink>
+                    )}
+                  </motion.div>
+                ))}
+              </motion.nav>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
