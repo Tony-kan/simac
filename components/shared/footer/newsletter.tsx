@@ -1,7 +1,6 @@
 // Todo: implement the subscribe newsletter
 
-
-"use client"
+"use client";
 
 import { useState } from "react";
 
@@ -10,15 +9,14 @@ const Newsletter = () => {
   const [message, setMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const isValidEmail = (email) => {
+  const isValidEmail = (email: string) => {
     // RFC 5322 compliant email regex
     const regex =
       /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return regex.test(email);
   };
 
-
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     // Validate email format
@@ -54,6 +52,7 @@ const Newsletter = () => {
         );
       }
     } catch (error) {
+      console.error("Subscription error:", error);
       setMessage("Network error. Please check your connection.");
     } finally {
       setIsSubmitting(false);
