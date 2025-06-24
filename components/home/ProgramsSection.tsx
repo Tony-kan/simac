@@ -4,6 +4,17 @@ import { FaArrowRight } from "react-icons/fa";
 import Image from "next/image";
 import { homepagePrograms } from "@/constants/data";
 
+/**
+ * ProgramsSection component renders a section showcasing different programs.
+ *
+ * This component displays a section with a white background and a container with
+ * a grid of program cards. Each card contains an image, a title, a description,
+ * and a "Learn More" link. The cards are styled to have a hover effect, and the
+ * link is styled to have a right arrow icon.
+ *
+ * The component does not manage any state or side effects. It is purely
+ * responsible for rendering the UI.
+ */
 const ProgramsSection = () => {
   return (
     <section className="bg-white py-14 sm:py-20">
