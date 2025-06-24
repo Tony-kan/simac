@@ -33,14 +33,14 @@ const BottomBar = () => {
           Copyright @ 2025 SIMAC
         </div>
         <div className="flex flex-col items-center gap-3">
-          <span className="text-xl font-bold">Stay Connected</span>
+          <span className="text-base font-bold">Stay Connected</span>
           <div className="flex gap-15">
             {/* Todo: this is the function that maps each icon */}
             {socialLinks.map((link) => (
               <Link
                 key={link.id}
                 href={link.url}
-                className="text-white hover:text-gray-300 transition-colors"
+                className="text-white hover:text-[#5C1B23] transition-colors"
                 aria-label={link.icon}
               >
                 {getIcon(link.icon)}

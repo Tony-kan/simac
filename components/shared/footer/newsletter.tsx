@@ -73,9 +73,9 @@ const Newsletter = () => {
 
   return (
     // Todo: added the padding of 10
-    <div className="bg-[#171718] p-10">
-      <h3 className="text-2xl font-bold mb-4 italic">Subscribe Newsletter</h3>
-      <p className="text-gray-300 mb-4 text-xl">
+    <div className="bg-[#171718] p-5">
+      <h3 className="text-xl font-bold mb-4 italic">Subscribe Newsletter</h3>
+      <p className="text-gray-300 mb-4 text-base">
         The latest events, news, ideas and updates
       </p>
 
@@ -92,7 +92,7 @@ const Newsletter = () => {
           />
           <button
             type="submit"
-            className="bg-[#FFE3BB] text-2xl text-black px-4 py-2 rounded-r-md font-bold disabled:opacity-50"
+            className="bg-[#FFE3BB] hover:text-[#5C1B23] text-base text-black px-4 py-2 rounded-r-md font-bold disabled:opacity-50"
             disabled={isSubmitting}
           >
             {isSubmitting ? "Sending..." : "Subscribe"}

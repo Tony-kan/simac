@@ -28,13 +28,19 @@ const ContactUs = () => {
     switch (item.id) {
       case 1: // Phone
         return (
-          <Link href={`tel:${item.description}`} className="hover:underline">
+          <Link
+            href={`tel:${item.description}`}
+            className="hover:underline hover:text-[#5C1B23]"
+          >
             {item.description}
           </Link>
         );
       case 2: // Email
         return (
-          <Link href={`mailto:${item.description}`} className="hover:underline">
+          <Link
+            href={`mailto:${item.description}`}
+            className="hover:underline hover:text-[#5C1B23]"
+          >
             {item.description}
           </Link>
         );
@@ -44,7 +50,7 @@ const ContactUs = () => {
             href="https://www.google.com/maps/search/?api=1&query=Kawale+2,+Along+Chidzanja+Road,+Lilongwe,+Malawi"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:underline"
+            className="hover:underline hover:text-[#5C1B23]"
           >
             {item.description}
           </Link>
@@ -55,9 +61,9 @@ const ContactUs = () => {
   };
   return (
     // Todo: added the padding of 10
-    <div className="p-10">
-      <h3 className="text-2xl font-bold mb-4 italic">Contact Us</h3>
-      <ul className="space-y-3 text-gray-300">
+    <div className="p-5">
+      <h3 className="text-xl font-bold mb-4 italic">Contact Us</h3>
+      <ul className="space-y-3 text-gray-300 text-base">
         {contact.map((item) => (
           <li
             key={item.id}
