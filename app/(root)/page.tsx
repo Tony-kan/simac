@@ -1,5 +1,7 @@
 "use client";
 
+//Todo: Create a responsive landing page banner,school section,news & events section,collaborators/partners section
+
 import Banner from "@/components/home/Banner";
 
 export default function Home() {

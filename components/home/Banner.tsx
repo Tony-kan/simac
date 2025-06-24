@@ -2,6 +2,20 @@ import React from "react";
 import CustomButton from "../ui/CustomButton";
 import { FaArrowRight } from "react-icons/fa";
 
+/**
+ * The hero banner component for the homepage.
+ *
+ * This component renders a full-width and full-height section with a background
+ * image, a title and a button. The background image is set to cover the entire
+ * section, and the title and button are centered horizontally and vertically.
+ *
+ * The title is a large heading with a bold font and white text color. The button
+ * is a custom button component with a transparent black background color, a white text color
+ * and an arrow icon on the left side.
+ *
+ * The component does not handle any state changes or side effects. It only
+ * renders the UI.
+ */
 const Banner = () => {
   const handleLearnMoreClick = () => {};
 

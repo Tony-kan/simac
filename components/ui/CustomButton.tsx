@@ -27,6 +27,23 @@ type LinkSpecificProps = {
 type CustomButtonProps = SharedProps &
   (ButtonSpecificProps | LinkSpecificProps);
 
+/**
+ * A custom button component that renders a button or a link element.
+ *
+ * This component is very versatile and can be used to render a button or a link.
+ * It takes care of the styling and accessibility for you.
+ *
+ * The props you can pass to this component are:
+ * - `btnText`: The text that is displayed on the button.
+ * - `icon`: An optional icon that is displayed on the button.
+ * - `iconPosition`: The position of the icon, either "left" or "right". Defaults to "left".
+ * - `styles`: Additional CSS classes that are applied to the button.
+ * - `as`: Either "button" or "link". Defaults to "button".
+ * - `href`: The URL that the link points to. Only applicable if `as` is "link".
+ * - `handleClick`: An optional function that is called when the button is clicked. Only applicable if `as` is "button".
+ * - `type`: The type of the button. Only applicable if `as` is "button". Defaults to "button".
+ * - `isDisabled`: If true, the button is disabled. Defaults to false.
+ */
 const CustomButton = (props: CustomButtonProps) => {
   const { btnText, icon, iconPosition = "left", styles } = props;
 
