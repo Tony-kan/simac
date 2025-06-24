@@ -7,7 +7,7 @@ import ExploreProgramSection from "@/components/home/ExploreProgramSection";
 
 export default function Home() {
   return (
-    <div className="flex flex-col ">
+    <div className="flex flex-col">
       <Banner />
       <ExploreProgramSection />
     </div>

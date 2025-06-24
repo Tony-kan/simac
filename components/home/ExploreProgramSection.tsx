@@ -16,6 +16,16 @@ const programs = [
   },
 ];
 
+/**
+ * ExploreProgramSection component renders a section showcasing different programs buttons.
+ *
+ * This component displays a section with a accent background color and a title "Explore Our Programs".
+ * It includes a list of programs, each represented by a button with customizable styles.
+ * The buttons are styled to change colors on hover, indicating interactivity.
+ *
+ * The component does not manage any state or side effects. It is purely responsible for rendering the UI.
+ */
+
 const ExploreProgramSection = () => {
   return (
     <section className="bg-[#FFE3BB] py-16 sm:py-10">
