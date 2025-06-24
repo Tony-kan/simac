@@ -1,7 +1,11 @@
+"use client";
+
+import Banner from "@/components/home/Banner";
+
 export default function Home() {
   return (
-    <div className="flex bg-background ">
-      <h1>Home page</h1>
+    <div className="flex flex-col ">
+      <Banner />
     </div>
   );
 }
