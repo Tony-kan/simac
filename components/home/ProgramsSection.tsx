@@ -18,16 +18,16 @@ import { homepagePrograms } from "@/constants/data";
 const ProgramsSection = () => {
   return (
     <section className="bg-white py-14 sm:py-20">
-      <div className="container mx-auto">
+      <div className="container p-4 sm:p-0 mx-auto">
         <div className="flex flex-col gap-16 md:gap-24">
           {homepagePrograms.map((program, index) => (
             <div
               key={program.title}
-              className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center"
+              className="grid grid-cols-1  lg:grid-cols-2 gap-8 lg:gap-16 items-center "
             >
               {/* Image Container */}
               <div
-                className={`relative w-full aspect-square lg:aspect-[2] rounded-sm shadow-2xl overflow-hidden
+                className={`relative w-full aspect-[2] md:aspect-[1.7] rounded-sm shadow-2xl overflow-hidden
       
                   ${index % 2 !== 0 ? "lg:order-last" : ""}
                 `}
@@ -42,14 +42,14 @@ const ProgramsSection = () => {
               </div>
 
               {/* info Container */}
-              <div className="flex flex-col items-start text-left">
+              <div className="flex flex-col h-full  items-start text-left mt-1">
                 <h3 className="text-2xl md:text-3xl font-bold">
                   {program.title}
                 </h3>
-                <p className="mt-4 text-base md:text-lg text-gray-600">
+                <p className="mt-8 text-base md:text-lg text-gray-600">
                   {program.description}
                 </p>
-                <div className="mt-6">
+                <div className="mt-10">
                   <CustomButton
                     as="link"
                     href={program.href}

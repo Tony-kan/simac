@@ -29,7 +29,7 @@ const programs = [
 const ExploreProgramSection = () => {
   return (
     <section className="bg-[#FFE3BB] py-16 sm:py-10">
-      <div className="container">
+      <div className="container p-4 sm:p-0">
         <div className="flex flex-col items-start pl-10 md:pl-20 text-start gap-4">
           <h1 className="text-2xl md:text-2xl font-bold text-[#5C1B23] drop-shadow-sm">
             Explore Our Programs :
