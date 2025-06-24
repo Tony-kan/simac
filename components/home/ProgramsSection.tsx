@@ -18,7 +18,7 @@ import { homepagePrograms } from "@/constants/data";
 const ProgramsSection = () => {
   return (
     <section className="bg-white py-14 sm:py-20">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto">
         <div className="flex flex-col gap-16 md:gap-24">
           {homepagePrograms.map((program, index) => (
             <div
