@@ -70,7 +70,7 @@ const CustomButton = (props: CustomButtonProps) => {
 
     props.isDisabled &&
       "opacity-50 pointer-events-none transform-none shadow-lg",
-    iconPosition === "right" ? "flex-row-reverse" : "flex-row",
+    iconPosition === "left" ? "flex-row-reverse" : "flex-row",
 
     styles
   );

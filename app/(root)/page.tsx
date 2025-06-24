@@ -4,12 +4,14 @@
 
 import Banner from "@/components/home/Banner";
 import ExploreProgramSection from "@/components/home/ExploreProgramSection";
+import ProgramsSection from "@/components/home/ProgramsSection";
 
 export default function Home() {
   return (
     <div className="flex flex-col">
       <Banner />
       <ExploreProgramSection />
+      <ProgramsSection />
     </div>
   );
 }

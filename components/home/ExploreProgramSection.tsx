@@ -11,7 +11,7 @@ const programs = [
     action: "h-20vh",
   },
   {
-    name: "ScaR Project",
+    name: "SCaR Project",
     action: "h-20vh",
   },
 ];
@@ -32,7 +32,7 @@ const ExploreProgramSection = () => {
       <div className="container px-4">
         <div className="flex flex-col items-start pl-10 md:pl-24 text-start gap-4">
           <h1 className="text-2xl md:text-2xl font-bold text-[#5C1B23] drop-shadow-sm">
-            Explore Our Programs
+            Explore Our Programs :
           </h1>
 
           <div className="mt-6 w-full flex flex-wrap justify-between mx-auto gap-4">
