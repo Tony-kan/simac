@@ -2,10 +2,13 @@
 
 import { contact } from "@/constants/links";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
-import Link from 'next/link'
+import Link from "next/link";
 
+// {
+/*displays contact information in the website footer. It lists phone, email, and address details, each with an appropriate icon and link type (tel, mailto, or Google Maps) */
 const ContactUs = () => {
   // Todo: map contact items to their corresponding icons
+  //Returns the corresponding icon component for a given contact type ID.
   const getIcon = (id: number) => {
     switch (id) {
       case 1: // Phone
@@ -20,6 +23,7 @@ const ContactUs = () => {
   };
 
   // Todo: generate appropriate link element for each contact type
+  // Returns a link element based on the contact item's ID and description.
   const getContactElement = (item: (typeof contact)[number]) => {
     switch (item.id) {
       case 1: // Phone
