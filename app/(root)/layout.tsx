@@ -7,8 +7,6 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     <main className="h-screen">
       <MainHeader />
       {children}
-      {/* Footer - full width */}
-      <Footer />
     </main>
   );
 };
