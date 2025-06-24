@@ -4,11 +4,17 @@
 
 import { useState } from "react";
 
+{
+  /*A Newsletter component renders a newsletter subscription form. It allows users to enter their email address and subscribe to a newsletter. The component validates the email, handles form submission, displays success or error messages, and manages the UI state during the subscription process.*/
+}
 const Newsletter = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  {
+    /* isValidEmail function Validates the provided email address using a regular expression that is RFC 5322 compliant.*/
+  }
   const isValidEmail = (email: string) => {
     // RFC 5322 compliant email regex
     const regex =
@@ -16,6 +22,9 @@ const Newsletter = () => {
     return regex.test(email);
   };
 
+  {
+    /* handleSubmit function handles the form submission, validates the email, sends a POST request to the API endpoint, andupdates the UI based on the response, and manages the loading state.*/
+  }
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -64,7 +73,7 @@ const Newsletter = () => {
 
   return (
     // Todo: added the padding of 10
-    <div className="bg-gray-900 p-10">
+    <div className="bg-[#171718] p-10">
       <h3 className="text-2xl font-bold mb-4 italic">Subscribe Newsletter</h3>
       <p className="text-gray-300 mb-4 text-xl">
         The latest events, news, ideas and updates
@@ -83,7 +92,7 @@ const Newsletter = () => {
           />
           <button
             type="submit"
-            className="bg-orange-200 text-2xl text-black px-4 py-2 rounded-r-md font-bold disabled:opacity-50"
+            className="bg-[#FFE3BB] text-2xl text-black px-4 py-2 rounded-r-md font-bold disabled:opacity-50"
             disabled={isSubmitting}
           >
             {isSubmitting ? "Sending..." : "Subscribe"}
