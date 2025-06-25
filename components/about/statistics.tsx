@@ -28,7 +28,7 @@ const statisticsData: StatisticItem[] = [
  */
 const Statistics: React.FC = () => {
   return (
-    <div className="flex flex-wrap gap-6 bg-[#FFE3BB] justify-between">
+    <div className="flex flex-wrap gap-6 bg-[#FFE3BB] justify-between px-26">
       {statisticsData.map((item, idx) => (
         <div key={idx} className="flex flex-col  p-6  ">
           <p className="text-lg sm:text-xl md:text-2xl font-bold text-[#5C1B23]">
