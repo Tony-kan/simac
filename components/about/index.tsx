@@ -7,7 +7,7 @@ const Breadcrumb = () => {
   return (
     <div>
       <nav aria-label="Breadcrumb">
-        <ol className="flex items-center gap-1 text-sm text-gray-700 pl-19 py-8 bg-[#FFE3BBB2]">
+        <ol className="flex items-center gap-1 text-2xl text-[##5C1B23] pl-19 py-8 bg-[#FFE3BBB2]">
           <li>
             <a href="/" className="block transition-colors hover:text-gray-900">
               {" "}
