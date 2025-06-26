@@ -34,12 +34,12 @@ const StoreHeader = () => {
             {/* mobile top row (logo and menu button)  */}
 
             <div className="flex items-center justify-between md:hidden">
-                <Link href="/store" className="text-xl font-bold">
+                <Link href="/stores" >
                     <Image
                         src={Simac_Logo}
                         alt="Logo"
-                        width={40}
-                        height={40}
+                        width={10}
+                        height={10}
                         className="w-auto h-auto"
                     />
                     {/* SIMAC STORE */}
@@ -78,7 +78,7 @@ const StoreHeader = () => {
                 <div className='hidden md:flex md:items-center md:justify-between gap-4' >
                     {/*logo and navigation */}
                 <div className="flex items-center gap-8">
-                    <Link href="/store" className="text-xl font-bold">
+                    <Link href="/stores" className="text-xl font-bold">
                     <Image
                     src={Simac_Logo}
                     alt="Logo"
@@ -89,7 +89,7 @@ const StoreHeader = () => {
                     {/* SIMAC STORE */}
                     </Link>
 
-                    <nav className="flex gap-6">
+                    <nav className="flex justify-center gap-10 ">
                         <Link href="/store/instruments" className="hover:text-[#5C1B23] font-bold">
                         Instruments
                         </Link>
