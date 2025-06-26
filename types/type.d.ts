@@ -16,3 +16,22 @@ declare interface INavLinkProps {
   className?: string;
   onClick?: React.MouseEventHandler<HTMLAnchorElement>;
 }
+
+declare interface IEvent {
+  id: number;
+  image: string;
+  title: string;
+  date: string;
+  location: string;
+}
+
+declare interface IEventCardProps {
+  event: IEvent;
+}
+
+declare interface INewsCardProps {
+  id: number;
+  title: string;
+  excerpt: string;
+  category: string;
+}

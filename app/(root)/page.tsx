@@ -3,6 +3,7 @@
 //Todo: Create a responsive landing page banner,school section,news & events section,collaborators/partners section
 
 import Banner from "@/components/home/Banner";
+import EventsNewsSection from "@/components/home/EventsNewsSection";
 import ExploreProgramSection from "@/components/home/ExploreProgramSection";
 import ProgramsSection from "@/components/home/ProgramsSection";
 
@@ -12,6 +13,7 @@ export default function Home() {
       <Banner />
       <ExploreProgramSection />
       <ProgramsSection />
+      <EventsNewsSection />
     </div>
   );
 }
