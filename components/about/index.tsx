@@ -1,63 +1,36 @@
-import Link from "next/link";
 import React from "react";
 
-//Todo: Add Breadcrumbs
-//  This component is a simple breadcrumb navigation for an "About" page.
-const Breadcrumb = () => {
+import Breadcrumb from "@/components/about";
+import Story from "@/components/about/story";
+import Statistics from "@/components/about/statistics";
+import ValueSection from "@/components/about/value-sect";
+import Testimonial from "@/components/about/testimonial";
+import CallToAction from "@/components/about/callToAction";
+
+/**
+ * AboutPage Component
+ *
+ * Renders the About Us page for SIMAC.
+ *
+ * Sections:
+ * - Breadcrumb: Navigation aid for the About page.
+ * - Story: Overview of SIMAC's history and impact.
+ * - Statistics: Key statistics and achievements.
+ * - ValueSection: Core values, vision, and mission, presented responsively.
+ */
+const AboutPage = () => {
   return (
     <div>
-      <nav aria-label="Breadcrumb">
-        <ol className="flex items-center gap-1 text-2xl text-[##5C1B23] pl-19 py-8 bg-[#FFE3BBB2]">
-          <li>
-            <Link
-              href="/"
-              className="block transition-colors hover:text-gray-900"
-            >
-              {" "}
-              Home{" "}
-            </Link>
-          </li>
-
-          <li className="rtl:rotate-180">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="size-4"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fillRule="evenodd"
-                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </li>
-
-          <li>
-            <a href="#" className="block transition-colors hover:text-gray-900">
-              {" "}
-              About us{" "}
-            </a>
-          </li>
-
-          <li className="rtl:rotate-180">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="size-4"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fillRule="evenodd"
-                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </li>
-        </ol>
-      </nav>
+      {/* show the breadcrumb on about us page */}
+      <Breadcrumb />
+      <Story />
+      <Statistics />
+      <ValueSection />
+      <Testimonial />
+      <CallToAction />
+      {/* Add more sections as needed */}
     </div>
   );
 };
 
-export default Breadcrumb;
+export default AboutPage;
