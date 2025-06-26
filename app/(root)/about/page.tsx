@@ -1,7 +1,17 @@
 import AboutPage from "@/components/about";
 import React from "react";
 
-const page = () => {
+/**
+ * Aboutpage (Next.js Page Component)
+ *
+ * This page renders the SIMAC About Us content using the AboutPage component.
+ *
+ * - Imports the main AboutPage layout and content.
+ * - Can be extended with additional sections as needed.
+ *
+ * @returns {JSX.Element} The rendered About Us page.
+ */
+const Aboutpage = () => {
   return (
     <div>
       <AboutPage />
@@ -10,4 +20,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Aboutpage;
