@@ -2,19 +2,23 @@
 
 import React from "react";
 import { Quote } from "lucide-react";
+import Image from "next/image";
+import { james, grace } from "@/constants/images";
 
 /**
  * Testimonial Component
  *
- * Renders a heading above two testimonial cards side by side on desktop, stacked on mobile.
- * On desktop, the heading is left-aligned and in line with the first card.
- * Cards have increased height for better visual balance.
- * Uses <section> for the cards instead of <div>.
+ * Displays a section with two testimonial cards, each showing a quote, image, name, and title.
+ *
+ * Features:
+ * - Responsive grid: two columns on desktop, stacked on mobile.
+ * - Decorative quote icons above and below the quote.
+ * - Image and name/title are horizontally aligned below the quote.
+ * - Uses Next.js Image for optimized images.
+ *
+ * Data:
+ * - testimonials: Array of testimonial objects with name, title, image, and quote.
  */
-
-import Image from "next/image";
-import { james, grace } from "@/constants/images";
-
 const testimonials = [
   {
     name: "Grace Banda",
@@ -30,6 +34,9 @@ const testimonials = [
   },
 ];
 
+/**
+ * Renders the testimonial section with heading and testimonial cards.
+ */
 const Testimonial = () => {
   return (
     <section className="bg-[#D9D9D9] py-12 px-6 md:px-20">
@@ -45,7 +52,6 @@ const Testimonial = () => {
             <Quote className="text-yellow-500 w-10 h-10 mb-4" />
             <p className="text-gray-800 italic">{t.quote}</p>
             <Quote className="text-yellow-500 w-6 h-6 self-end" />
-
             {/* Image with name and title to the right */}
             <div className="flex items-center justify-center mb-4 mt-4">
               <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-[#5C1B23] ">
