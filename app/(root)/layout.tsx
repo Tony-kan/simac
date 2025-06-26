@@ -1,4 +1,5 @@
 // import Footer from "@/components/shared/footer";
+import Footer from "@/components/shared/footer";
 import MainHeader from "@/components/shared/MainHeader";
 import React from "react";
 
@@ -7,6 +8,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     <main className="h-screen">
       <MainHeader />
       {children}
+      <Footer />
     </main>
   );
 };

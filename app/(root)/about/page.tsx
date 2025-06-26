@@ -4,6 +4,8 @@ import Breadcrumb from "@/components/about";
 import Story from "@/components/about/story";
 import Statistics from "@/components/about/statistics";
 import ValueSection from "@/components/about/value-sect";
+import Testimonial from "@/components/about/testimonial";
+import CallToAction from "@/components/about/callToAction";
 
 /**
  * AboutPage Component
@@ -20,10 +22,12 @@ const AboutPage = () => {
   return (
     <div>
       {/* show the breadcrumb on about us page */}
-      <Breadcrumb />
+      {/* <Breadcrumb />
       <Story />
       <Statistics />
-      <ValueSection />
+      <ValueSection /> */}
+      <Testimonial />
+      <CallToAction />
       {/* Add more sections as needed */}
     </div>
   );
