@@ -35,9 +35,9 @@ export const upcomingEventsData: IEvent[] = [
   {
     id: 1,
     image: "https://picsum.photos/seed/techconf/400/300",
-    title: "Annual Tech Conference 2024",
+    title: "Annual Conference 2024",
     date: "October 26-28, 2024",
-    location: "San Francisco, CA",
+    location: "kawale, Lilongwe",
   },
   {
     id: 2,
@@ -51,14 +51,14 @@ export const upcomingEventsData: IEvent[] = [
     image: "https://picsum.photos/seed/startupmeet/400/300",
     title: "Startup Pitch Night",
     date: "November 19, 2024",
-    location: "New York, NY",
+    location: "Limbe, Blantyre",
   },
   {
     id: 4,
     image: "https://picsum.photos/seed/webdev/400/300",
     title: "Web Development Workshop",
     date: "December 05, 2024",
-    location: "London, UK",
+    location: "Mzuzu",
   },
 ];
 
@@ -68,14 +68,14 @@ export const pastEventsData: IEvent[] = [
     image: "https://picsum.photos/seed/marketing/400/300",
     title: "Marketing & Growth Summit",
     date: "August 15, 2024",
-    location: "Chicago, IL",
+    location: "Area 36, Lilongwe",
   },
   {
     id: 6,
     image: "https://picsum.photos/seed/aihack/400/300",
     title: "AI Hackathon",
     date: "July 22, 2024",
-    location: "Berlin, Germany",
+    location: "25b, Lilongwe",
   },
 ];
 
