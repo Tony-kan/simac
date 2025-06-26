@@ -27,22 +27,14 @@ export const EventCard = ({ event }: IEventCardProps) => {
       <div className="p-5">
         <h3 className="text-xl font-bold text-gray-800 mb-2">{event.title}</h3>
         <div className="flex items-center text-gray-600 mb-2">
-          <span className="mr-2">📅</span>{" "}
-          {/* Replace with an icon library if available */}
-          <p>{event.date}</p>
+          <span className="mr-2">📅</span> <p>{event.date}</p>
         </div>
         <div className="flex items-center text-gray-600 mb-4">
           <span className="mr-2">📍</span>{" "}
           {/* Replace with an icon library if available */}
           <p>{event.location}</p>
         </div>
-        {/* <CustomButton className="w-full">Register</CustomButton> */}
-        <CustomButton
-          as="button"
-          btnText="Register"
-          handleClick={() => {}}
-          // styles="bg-[#5C1B23] border-2 border-transparent text-[#FFE3BB] hover:bg-[#FFE3BB] hover:border-[#5C1B23] hover:text-[#5C1B23]"
-        />
+        <CustomButton as="button" btnText="Register" handleClick={() => {}} />
       </div>
     </div>
   );
