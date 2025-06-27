@@ -20,7 +20,7 @@ const Breadcrumb = () => {
   return (
     <div>
       <nav aria-label="Breadcrumb">
-        <ol className="flex items-center gap-1 text-2xl text-[##5C1B23] pl-19 py-8 bg-[#FFE3BBB2]">
+        <ol className="flex items-center gap-1 pl-19 py-8 bg-[#FFE3BBB2] text-lg sm:text-xl md:text-2xl font-bold text-[#5C1B23]">
           <li>
             <Link
               href="/"
