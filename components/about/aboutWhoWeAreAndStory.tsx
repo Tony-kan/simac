@@ -22,7 +22,7 @@ const AboutWhoWeAreAndStory = () => {
           Who We Are
         </h1>
         {/* Introduction paragraph */}
-        <p className="p-4 md:w-1/2 w-full text-base md:text-xl font-medium">
+        <p className="p-4 md:w-1/2 w-full text-base md:text-xl font-medium pr-9">
           SIMAC (School of Innovative Music, Arts & Culture) is Malawi’s premier
           institution for nurturing creative talent and preserving our rich
           cultural heritage. Since 2010, we’ve empowered thousands of students
@@ -38,9 +38,9 @@ const AboutWhoWeAreAndStory = () => {
         </h1>
 
         {/* History and achievements */}
-        <div className="flex flex-col w-full md:w-1/2 space-y-2">
+        <div className="flex flex-col w-full md:w-1/2 space-y-2 pr-9">
           {/* History paragraph */}
-          <p className="text-base md:text-xl font-medium">
+          <p className="text-base md:text-xl font-medium ">
             What began as a small community music workshop in Lilongwe has
             blossomed into a multifaceted academy, uniting seasoned artists,
             educators, and youth. Guided by a shared belief that every child

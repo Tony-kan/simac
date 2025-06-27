@@ -50,7 +50,9 @@ const TestimonialSection = () => {
             className="bg-white p-6 rounded-xl shadow-md flex flex-col justify-between  w-full mx-auto"
           >
             <Quote className="text-yellow-500 w-10 h-10 mb-4" />
-            <p className="text-gray-800 italic">{t.quote}</p>
+            <p className="text-gray-800 italic text-base md:text-xl font-medium">
+              {t.quote}
+            </p>
             <Quote className="text-yellow-500 w-6 h-6 self-end" />
             {/* Image with name and title to the right */}
             <div className="flex items-center justify-center mb-4 mt-4">

@@ -28,10 +28,8 @@ const rightContent = [
       <p>
         <strong>Excellence:</strong> High standards in arts education.
         <br />
-        <br />
         <strong>Inclusion:</strong> Opportunities for all, regardless of
         background.
-        <br />
         <br />
         <strong>Cultural Heritage:</strong> Promoting and preserving Malawian
         traditions
@@ -65,15 +63,15 @@ const ValueSection = () => {
   return (
     <div className="bg-white px-4 py-8">
       {/* Mobile: stack pairs vertically; Desktop: two columns, rows aligned */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-7 p-10 mx-auto">
         {leftContent.map((item, idx) => (
           <React.Fragment key={idx}>
             {/* Left column (title) */}
-            <div className="font-semibold text-2xl md:text-3xl flex items-center md:items-center mb-2 md:mb-0 md:px-26">
+            <div className="font-semibold text-2xl md:text-3xl flex items-center md:items-center mb-2 md:mb-0 md:px-3">
               {item.title}
             </div>
             {/* Right column (text) */}
-            <div className="text-base md:text-lg flex items-start md:items-center">
+            <div className="text-base md:text-xl font-medium flex items-start md:items-center">
               {rightContent[idx].text}
             </div>
           </React.Fragment>
