@@ -12,7 +12,7 @@ import React from "react";
  * 1. Who We Are: Brief introduction to SIMAC.
  * 2. Our Story: History and achievements, including an italicized list of key milestones.
  */
-const Story = () => {
+const AboutWhoWeAreAndStory = () => {
   return (
     <div className="flex flex-col space-y-6 p-6 mx-auto bg-white my-8">
       {/* Top section: two items horizontally on md+, stacked on mobile */}
@@ -67,4 +67,4 @@ const Story = () => {
   );
 };
 
-export default Story;
+export default AboutWhoWeAreAndStory;

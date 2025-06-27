@@ -37,7 +37,7 @@ const testimonials = [
 /**
  * Renders the testimonial section with heading and testimonial cards.
  */
-const Testimonial = () => {
+const TestimonialSection = () => {
   return (
     <section className="bg-[#D9D9D9] py-12 px-6 md:px-20">
       <h2 className="text-4xl font-bold text-[#5C1B23] mb-10">
@@ -77,4 +77,4 @@ const Testimonial = () => {
   );
 };
 
-export default Testimonial;
+export default TestimonialSection;

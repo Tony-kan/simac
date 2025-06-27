@@ -1,11 +1,11 @@
 import React from "react";
 
-import Breadcrumb from "@/components/about/breadcrumb";
-import Story from "@/components/about/story";
+import Breadcrumb from "@/components/about/breadcrumb-section";
+import Story from "@/components/about/aboutWhoWeAreAndStory";
 import Statistics from "@/components/about/stat-section";
-import ValueSection from "@/components/about/value-sect";
+import ValueSection from "@/components/about/value-section";
 import Testimonial from "@/components/about/testimonial";
-import CallToAction from "@/components/about/callToAction";
+import CallToAction from "@/components/about/callToAction-section";
 
 /**
  * AboutPage Component

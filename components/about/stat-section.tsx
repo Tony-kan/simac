@@ -26,7 +26,7 @@ const statisticsData: StatisticItem[] = [
  * Renders a responsive set of statistic cards, each showing a label and value.
  * The data is defined internally and not passed as props.
  */
-const Statistics: React.FC = () => {
+const StatSection: React.FC = () => {
   return (
     <div className="flex flex-wrap gap-6 bg-[#FFE3BB] justify-between px-26">
       {statisticsData.map((item, idx) => (
@@ -43,4 +43,4 @@ const Statistics: React.FC = () => {
   );
 };
 
-export default Statistics;
+export default StatSection;
