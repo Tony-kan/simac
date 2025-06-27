@@ -1,7 +1,7 @@
 import React from "react";
 
 /**
- * Story Component
+ * AboutWhoWeAreAndStory Component
  *
  * Renders the "Who We Are" and "Our Story" sections for SIMAC, including a summary of achievements.
  * - Responsive layout: stacks vertically on mobile, horizontal on medium+ screens.

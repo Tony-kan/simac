@@ -21,7 +21,7 @@ const statisticsData: StatisticItem[] = [
 ];
 
 /**
- * Statistics Component
+ * StatSection Component
  *
  * Renders a responsive set of statistic cards, each showing a label and value.
  * The data is defined internally and not passed as props.
