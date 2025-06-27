@@ -1,23 +1,36 @@
-import AboutPage from "@/components/about";
 import React from "react";
 
+import Breadcrumb from "@/components/about/breadcrumb";
+import Story from "@/components/about/story";
+import Statistics from "@/components/about/statistics";
+import ValueSection from "@/components/about/value-sect";
+import Testimonial from "@/components/about/testimonial";
+import CallToAction from "@/components/about/callToAction";
+
 /**
- * Aboutpage (Next.js Page Component)
+ * AboutPage Component
  *
- * This page renders the SIMAC About Us content using the AboutPage component.
+ * Renders the About Us page for SIMAC.
  *
- * - Imports the main AboutPage layout and content.
- * - Can be extended with additional sections as needed.
- *
- * @returns {JSX.Element} The rendered About Us page.
+ * Sections:
+ * - Breadcrumb: Navigation aid for the About page.
+ * - Story: Overview of SIMAC's history and impact.
+ * - Statistics: Key statistics and achievements.
+ * - ValueSection: Core values, vision, and mission, presented responsively.
  */
-const Aboutpage = () => {
+const AboutPage = () => {
   return (
     <div>
-      <AboutPage />
+      {/* show the breadcrumb on about us page */}
+      <Breadcrumb />
+      <Story />
+      <Statistics />
+      <ValueSection />
+      <Testimonial />
+      <CallToAction />
       {/* Add more sections as needed */}
     </div>
   );
 };
 
-export default Aboutpage;
+export default AboutPage;
