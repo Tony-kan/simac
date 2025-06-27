@@ -2,7 +2,7 @@ import React from "react";
 
 import Breadcrumb from "@/components/about/breadcrumb";
 import Story from "@/components/about/story";
-import Statistics from "@/components/about/statistics";
+import Statistics from "@/components/about/stat-section";
 import ValueSection from "@/components/about/value-sect";
 import Testimonial from "@/components/about/testimonial";
 import CallToAction from "@/components/about/callToAction";
