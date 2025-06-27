@@ -18,11 +18,11 @@ const AboutWhoWeAreAndStory = () => {
       {/* Top section: two items horizontally on md+, stacked on mobile */}
       <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
         {/* Section heading: Who We Are */}
-        <h1 className="p-4 md:w-1/2 w-full text-center text-xl md:text-3xl font-bold">
+        <h1 className="p-4 md:w-1/2 w-full text-center text-xl md:text-2xl font-bold">
           Who We Are
         </h1>
         {/* Introduction paragraph */}
-        <p className="p-4 md:w-1/2 w-full text-xl md:text-base font-medium">
+        <p className="p-4 md:w-1/2 w-full text-base md:text-xl font-medium">
           SIMAC (School of Innovative Music, Arts & Culture) is Malawi’s premier
           institution for nurturing creative talent and preserving our rich
           cultural heritage. Since 2010, we’ve empowered thousands of students
@@ -33,14 +33,14 @@ const AboutWhoWeAreAndStory = () => {
       {/* Bottom section: two main items horizontally on md+, stacked on mobile */}
       <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
         {/* Section heading: Our Story */}
-        <h1 className="p-4 md:w-1/2 w-full text-center text-xl md:text-3xl font-bold">
+        <h1 className="p-4 md:w-1/2 w-full text-center text-xl md:text-2xl font-bold">
           Our Story
         </h1>
 
         {/* History and achievements */}
         <div className="flex flex-col w-full md:w-1/2 space-y-2">
           {/* History paragraph */}
-          <p className="text-xl md:text-base font-medium">
+          <p className="text-base md:text-xl font-medium">
             What began as a small community music workshop in Lilongwe has
             blossomed into a multifaceted academy, uniting seasoned artists,
             educators, and youth. Guided by a shared belief that every child
