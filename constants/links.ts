@@ -80,12 +80,69 @@ export const footerLinks = [
   },
   {
     id: 2,
-    title: "About",
+    title: "About Us",
     url: "/about",
   },
   {
     id: 3,
-    title: "Contact",
-    url: "/contact",
+    title: "Programs",
+    url: "/program",
+  },
+  {
+    id: 4,
+    title: "Donate",
+    url: "/donate",
+  },
+  {
+    id: 5,
+    title: "Policies",
+    url: "/policy",
+  },
+  {
+    id: 6,
+    title: "FAQs",
+    url: "/faq",
+  },
+];
+
+// social links like fb, x, etc
+export const socialLinks = [
+  {
+    id: 1,
+    icon: "facebook",
+    url: "#",
+  },
+  {
+    id: 2,
+    icon: "twitter",
+    url: "#",
+  },
+  {
+    id: 3,
+    icon: "youtube",
+    url: "#",
+  },
+  {
+    id: 4,
+    icon: "instagram",
+    url: "#",
+  },
+];
+
+export const contact = [
+  {
+    id: 1,
+    icon: "",
+    description: "+265882527472",
+  },
+  {
+    id: 2,
+    icon: "",
+    description: "simacmalawi.info@gmail.com",
+  },
+  {
+    id: 3,
+    icon: "",
+    description: "Kawale 2, Along Chidzanja Road, Lilongwe, Malawi.",
   },
 ];
