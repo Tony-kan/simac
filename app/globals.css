@@ -9,3 +9,8 @@
 html {
   font-family: var(--font-montserrat);
 }
+
+.bg-hero {
+  --tw-bg-opacity: 1;
+  background-image: url("/assets/hero_bg_img.png");
+}
