@@ -1,3 +1,4 @@
+// import Footer from "@/components/shared/footer";
 import MainHeader from "@/components/shared/MainHeader";
 import React from "react";
 
