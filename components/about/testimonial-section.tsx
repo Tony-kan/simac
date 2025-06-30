@@ -54,7 +54,7 @@ const testimonials = [
   },
 ];
 
-//Todo: implement  smooth countup animations on numbers of horizontal silder
+//Todo: implement horizontal slider
 
 // Animation config
 const animation = { duration: 9000, easing: (t: number) => t };
@@ -102,7 +102,7 @@ const TestimonialSection = () => {
       <h2 className="text-4xl font-bold text-[#5C1B23] mb-10">
         What People Are Saying
       </h2>
-      // Testimonials slider
+      {/* Testimonials slider */}
       <div className="keen-slider" ref={sliderRef}>
         {testimonials.map((t, index) => (
           <div
