@@ -37,16 +37,30 @@ const StatSection: React.FC = () => {
     "counter-children",
   ];
 
-  // Set up useCountUp for each stat with scrollSpy enabled
-  statisticsData.forEach((item, idx) => {
-    useCountUp({
-      ref: statRefIds[idx],
-      end: Number(item.value),
-      enableScrollSpy: true,
-      scrollSpyDelay: 300,
-      separator: ",",
-      duration: 5,
-    });
+  // Call useCountUp for each stat in a fixed order, not inside a loop/callback
+  useCountUp({
+    ref: statRefIds[0],
+    end: Number(statisticsData[0].value),
+    enableScrollSpy: true,
+    scrollSpyDelay: 300,
+    separator: ",",
+    duration: 5,
+  });
+  useCountUp({
+    ref: statRefIds[1],
+    end: Number(statisticsData[1].value),
+    enableScrollSpy: true,
+    scrollSpyDelay: 300,
+    separator: ",",
+    duration: 5,
+  });
+  useCountUp({
+    ref: statRefIds[2],
+    end: Number(statisticsData[2].value),
+    enableScrollSpy: true,
+    scrollSpyDelay: 300,
+    separator: ",",
+    duration: 5,
   });
 
   return (
