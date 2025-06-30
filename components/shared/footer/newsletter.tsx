@@ -73,7 +73,7 @@ const Newsletter = () => {
 
   return (
     // Todo: added the padding of 10
-    <div className="bg-[#171718] p-5">
+    <div className="bg-[#171718] p-10">
       <h3 className="text-xl font-bold mb-4 italic">Subscribe Newsletter</h3>
       <p className="text-gray-300 mb-4 text-base">
         The latest events, news, ideas and updates
