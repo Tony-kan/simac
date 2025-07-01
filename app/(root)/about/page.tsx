@@ -1,6 +1,5 @@
 import React from "react";
 
-import Breadcrumb from "@/components/about/breadcrumb-section";
 import Story from "@/components/about/aboutWhoWeAreAndStory";
 import Statistics from "@/components/about/stat-section";
 import ValueSection from "@/components/about/value-section";
@@ -23,7 +22,7 @@ const AboutPage = () => {
   return (
     <div>
       {/* show the breadcrumb on about us page */}
-      {/* <Breadcrumb /> */}
+
       <CustomBreadcrumb
         items={[
           { label: "Home", href: "/" },
