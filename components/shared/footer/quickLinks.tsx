@@ -8,7 +8,7 @@ import Link from "next/link";
 const QuickLinks = () => {
   return (
     // Todo: added the padding of 10
-    <div className=" p-5">
+    <div className="p-10">
       <h3 className="text-xl font-bold mb-4 italic">Quick links</h3>
       <ul className="space-y-2 text-base">
         {footerLinks.map((link) => (
