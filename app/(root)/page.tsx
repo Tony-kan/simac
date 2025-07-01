@@ -7,6 +7,7 @@ import EventsNewsSection from "@/components/home/EventsNewsSection";
 import ExploreProgramSection from "@/components/home/ExploreProgramSection";
 import PartnersSection from "@/components/home/PartnersSection";
 import ProgramsSection from "@/components/home/ProgramsSection";
+import Footer from "@/components/shared/footer";
 
 /**
  * The Home component renders the landing page.
@@ -26,6 +27,7 @@ export default function Home() {
       <ProgramsSection />
       <EventsNewsSection />
       <PartnersSection />
+      <Footer/>
     </div>
   );
 }

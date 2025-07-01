@@ -32,10 +32,10 @@ const StoreHeader = () => {
         <div className="w-full mx-auto px-4 py-2 transition-all duration-200">
             {/* Mobile: Logo + buttons */}
             <div className="flex items-center justify-between lg:hidden">
-            <Logo width={100} height={100}/>
+            <Logo width={80} height={80}/>
             <div className="flex items-center gap-4">
                 <button onClick={() => setIsSearchOpen((prev) => !prev)}>
-                <Search size={20} />
+                <Search size={20}  />
                 </button>
                 <button onClick={() => setIsMobileMenuOpen((prev) => !prev)}>
                 {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -48,8 +48,8 @@ const StoreHeader = () => {
 
             {/* Desktop Layout */}
             <div className="hidden lg:flex justify-between items-center">
-            <div className="flex  items-center pl-0 lg:pl-0 lg:ml-0">
-                <Logo width={130} height={130}/>
+            <div className="flex items-center gap-70  pl-0 lg:pl-0 lg:mr-6">
+                <Logo width={100} height={100}/>
                 <nav className="flex ml-8">
                 <StoreNav />
                 </nav>

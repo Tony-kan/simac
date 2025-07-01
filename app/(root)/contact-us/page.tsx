@@ -1,8 +1,10 @@
 "use client";
+import Footer from "@/components/shared/footer";
 import ContactForm from "@/components/ui/ContactForm";
 import ContactLink from "@/components/ui/ContactLink";
 // import InteractiveMap from "@/components/ui/InteractiveMap";
 import MapComponent from "@/components/ui/MapComponent";
+// import Image from "next/image";
 import React from "react";
 
 const ContactUsPage = () => {
@@ -25,9 +27,12 @@ const ContactUsPage = () => {
       </section>
 
       
+      <section>
 
       <ContactForm />
       
+      </section>
+      <Footer />
     </main>
 
   );
