@@ -2,6 +2,7 @@
 
 import React from "react";
 import CustomButton from "../ui/CustomButton";
+// import { useRouter } from "next/router";
 
 /**
  * CallToAction Component
@@ -18,6 +19,7 @@ import CustomButton from "../ui/CustomButton";
  * - Make the section more dynamic (e.g., props for custom text or actions).
  */
 const CallToAction = () => {
+  // const Router = useRouter();
   return (
     <section className="bg-[#D9D9D9] mt-2 py-12 px-6 md:px-20 text-center md:text-left">
       <h2 className="text-4xl font-semibold text-black mb-4">
@@ -39,12 +41,23 @@ const CallToAction = () => {
           styles="bg-[#FFE3BB] hover:bg-yellow-300 hover:text-[#5C1B23] text-[#6C1D45] font-bold py-3 px-6 rounded"
           handleClick={() => {
             // TODO: Link to donation page
+            // Router.push("/donate");
           }}
         />
         {/* TODO: Link to programs page */}
-        <button className="bg-[#5C1B23] hover:bg-[#5a1839] text-white font-bold py-3 px-6 rounded">
+        {/* <button className="bg-[#5C1B23] hover:bg-[#5a1839] text-white font-bold py-3 px-6 rounded">
           Explore Our Programs
-        </button>
+        </button> */}
+        <CustomButton
+          as="button"
+          btnText="Explore Our Programs"
+          styles="bg-[#5C1B23] hover:bg-[#5a1839] text-white font-bold py-3 px-6 rounded"
+          handleClick={() => {
+            // TODO: Link program page
+            // For navigation, use router.push("/programs") if needed.
+            // Router.push("/programs");
+          }}
+        />
       </div>
     </section>
   );
