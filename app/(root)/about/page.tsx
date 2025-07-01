@@ -6,6 +6,7 @@ import Statistics from "@/components/about/stat-section";
 import ValueSection from "@/components/about/value-section";
 import Testimonial from "@/components/about/testimonial-section";
 import CallToAction from "@/components/about/callToAction-section";
+import CustomBreadcrumb from "@/components/ui/CustomBreadcrumb";
 
 /**
  * AboutPage Component
@@ -22,7 +23,16 @@ const AboutPage = () => {
   return (
     <div>
       {/* show the breadcrumb on about us page */}
-      <Breadcrumb />
+      {/* <Breadcrumb /> */}
+      <CustomBreadcrumb
+        items={[
+          { label: "Home", href: "/" },
+          { label: "About us", isCurrent: true },
+        ]}
+        // homeIcon={<HomeIcon size={16} className="mr-1" />}
+        containerClass="flex items-center gap-1 pl-19 py-8 bg-[#FFE3BBB2] text-lg sm:text-xl md:text-2xl font-bold text-[#5C1B23]"
+        // currentItemClass="text-gray-900"
+      />
       <Story />
       <Statistics />
       <ValueSection />
