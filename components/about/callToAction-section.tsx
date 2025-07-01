@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import CustomButton from "../ui/CustomButton";
 
 /**
  * CallToAction Component
@@ -29,9 +30,17 @@ const CallToAction = () => {
       </p>
       <div className="flex flex-col sm:flex-row items-center gap-4">
         {/* TODO: Link to donation page */}
-        <button className="bg-[#FFE3BB] hover:bg-yellow-300 text-[#6C1D45] font-bold py-3 px-6 rounded">
+        {/* <button className="bg-[#FFE3BB] hover:bg-yellow-300 text-[#6C1D45] font-bold py-3 px-6 rounded">
           Support Our Mission
-        </button>
+        </button> */}
+        <CustomButton
+          as="button"
+          btnText="Support Our Mission"
+          styles="bg-[#FFE3BB] hover:bg-yellow-300 hover:text-[#5C1B23] text-[#6C1D45] font-bold py-3 px-6 rounded"
+          handleClick={() => {
+            // TODO: Link to donation page
+          }}
+        />
         {/* TODO: Link to programs page */}
         <button className="bg-[#5C1B23] hover:bg-[#5a1839] text-white font-bold py-3 px-6 rounded">
           Explore Our Programs
