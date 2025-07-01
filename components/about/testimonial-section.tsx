@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { Quote } from "lucide-react";
 import Image from "next/image";
 import { useKeenSlider } from "keen-slider/react";
@@ -57,53 +57,82 @@ const testimonials = [
 //Todo: implement horizontal slider
 
 // Animation config
-const animation = { duration: 9000, easing: (t: number) => t };
+const AUTO_SLIDE_INTERVAL = 6000; // 6 seconds between slides
+/**
+ * TestimonialSection Component
+ *
+ * Renders a responsive, auto-advancing testimonial slider using Keen Slider.
+ *
+ * Features:
+ * - Responsive: 1 slide on mobile, 2 on tablet/desktop, with spacing.
+ * - Autoplay: Slides advance automatically every 6 seconds.
+ * - Smooth transitions: Uses Keen Slider's built-in animation.
+ * - Cards: Consistent height, width, and spacing for all testimonial cards.
+ * - Accessible: Uses semantic HTML and alt text for images.
+ *
+ * TODO:
+ * - Make animation duration configurable via props.
+ * - Add support for dynamic testimonials
+ */
+
 /**
  * Renders the testimonial section with heading and testimonial cards.
  */
 
 const TestimonialSection = () => {
-  // Initialize the Keen Slider with options
-  // The slider will loop, use free-snap mode, and have specific slide settings
-  const [sliderRef] = useKeenSlider<HTMLDivElement>({
+  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     loop: true,
-    mode: "free-snap",
+    mode: "free-snap", // Use free-snap mode for smoother animations
+    renderMode: "performance", // Use performance mode for smoother animations
     drag: false, // Disable dragging for smoother animations
     // Configure slides
     slides: {
-      perView: 1,
-      spacing: 16,
+      perView: 1, // Show one slide at a time
+      spacing: 16, // Spacing between slides
     },
-    created(s) {
-      // Move to the second slide on creation for a better initial view
-      s.moveToIdx(1, true, animation);
-    },
-    updated(s) {
-      // Move to the next slide when updated
-      s.moveToIdx(s.track.details.abs + 1, true, animation);
-    },
-    animationEnded(s) {
-      // Move to the next slide after animation ends
-      // This ensures the slider continues to move smoothly
-      s.moveToIdx(s.track.details.abs + 1, true, animation);
-    },
+
     breakpoints: {
       // Responsive settings for different screen sizes
-      "(min-width: 768px)": {
+
+      "(min-width: 480px)": {
         slides: {
-          perView: 2,
-          spacing: 24,
+          perView: 2, // Show two slides at a time
+          spacing: 20, // Spacing between slides
+        },
+      },
+      "(min-width: 1024px)": {
+        slides: {
+          perView: 2, // Show two slides at a time
+          spacing: 25, // Spacing between slides
+        },
+      },
+      "(min-width: 1280px)": {
+        slides: {
+          perView: 2, // Show two slides at a time
+          spacing: 25, // Spacing between slides
         },
       },
     },
   });
+
+  useEffect(() => {
+    // Autoplay: move to next slide every AUTO_SLIDE_INTERVAL ms
+    // TODO: Add pause-on-hover logic for better accessibility
+    const interval = setInterval(() => {
+      if (instanceRef.current) {
+        instanceRef.current.next();
+      }
+    }, AUTO_SLIDE_INTERVAL);
+    return () => clearInterval(interval);
+  }, [instanceRef]);
+
   return (
     <section className="bg-[#D9D9D9] py-12 px-6 md:px-20">
       <h2 className="text-4xl font-bold text-[#5C1B23] mb-10">
         What People Are Saying
       </h2>
       {/* Testimonials slider */}
-      <div className="keen-slider" ref={sliderRef}>
+      <div className="keen-slider h-100 w-5" ref={sliderRef}>
         {testimonials.map((t, index) => (
           <div
             key={index}
