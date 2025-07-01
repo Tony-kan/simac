@@ -2,6 +2,7 @@
 
 "use client";
 
+import CustomButton from "@/components/ui/CustomButton";
 import { useState } from "react";
 
 {
@@ -90,13 +91,14 @@ const Newsletter = () => {
             required
             disabled={isSubmitting}
           />
-          <button
+          <CustomButton
+            as="button"
             type="submit"
-            className="bg-[#FFE3BB] hover:text-[#5C1B23] text-base text-black px-4 py-2 rounded-r-md font-bold disabled:opacity-50"
-            disabled={isSubmitting}
-          >
-            {isSubmitting ? "Sending..." : "Subscribe"}
-          </button>
+            btnText={isSubmitting ? "Sending..." : "Subscribe"}
+            isDisabled={isSubmitting}
+            styles="bg-[#FFE3BB] text-base text-black px-4 py-2 rounded-r-md font-bold disabled:opacity-50"
+            handleClick={() => {}}
+          />
         </div>
       </form>
 
