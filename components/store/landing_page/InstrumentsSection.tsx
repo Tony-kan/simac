@@ -4,6 +4,17 @@ import ProductCard from "./ProductCard";
 import CustomButton from "@/components/ui/CustomButton";
 import { instrumentData } from "@/constants/data";
 
+/**
+ * InstrumentsSection component renders a section displaying a list of musical instruments.
+ *
+ * This component showcases a grid of instrument cards, each with details such as
+ * name, price, image, and rating. Below the grid, a button is provided to navigate
+ * to the full list of instruments available in the store.
+ *
+ * The component is styled with responsive grid layout to adapt to different screen sizes.
+ * It does not manage any state or side effects, focusing solely on rendering the UI.
+ */
+
 const InstrumentsSection = () => {
   return (
     <section className="bg-white py-10 md:py-4">

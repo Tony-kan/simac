@@ -23,6 +23,14 @@ const policies = [
   },
 ];
 
+/**
+ * Renders a section showcasing our store policies: 30-day returns, safe delivery, and 24/7 support.
+ *
+ * The policies are displayed as a row of three columns on desktop, and as a single column on mobile.
+ * Each policy is represented by an icon, a title, and a brief description.
+ *
+ * @returns {JSX.Element} A section element containing the policies.
+ */
 const PolicySection = () => {
   return (
     <section className="w-full bg-[#FFE3BB] py-12 md:py-10">

@@ -1,6 +1,16 @@
 import CustomButton from "@/components/ui/CustomButton";
 import React from "react";
 
+/**
+ * StoreBanner component renders a banner with a gradient background,
+ * overlaying a dark background. It displays a heading, optional subtitle,
+ * and a call-to-action button.
+ *
+ * @param {IStoreBannerProps} props - Optional props for the component.
+ * @param {string} [props.title] - Heading text. Defaults to "Welcome to Our Store".
+ * @param {string} [props.subtitle] - Optional subtitle text.
+ * @returns {JSX.Element}
+ */
 const StoreBanner = ({
   title = "Welcome to Our Store",
   subtitle,
