@@ -100,3 +100,70 @@ export const newsData = [
     category: "Community",
   },
 ];
+
+export const instrumentData: IProductCardProps[] = [
+  {
+    id: "inst-001",
+    name: "Concert Series Violin",
+    price: 799.99,
+    imageUrl: "/assets/products/instrument_1.png", // Replace with your actual image paths
+    rating: 4.8,
+    reviewCount: 112,
+  },
+  {
+    id: "inst-002",
+    name: "Professional Cello",
+    price: 2450.0,
+    imageUrl: "/assets/products/instrument_2.png",
+    rating: 4.9,
+    reviewCount: 78,
+  },
+  {
+    id: "inst-003",
+    name: "Classic Acoustic Guitar",
+    price: 499.5,
+    imageUrl: "/assets/products/instrument_3.png",
+    rating: 4.7,
+    reviewCount: 230,
+  },
+  {
+    id: "inst-004",
+    name: "Student Flute Outfit",
+    price: 275.0,
+    imageUrl: "/assets/products/instrument_1.png",
+    rating: 2.5,
+    reviewCount: 95,
+  },
+  {
+    id: "inst-005",
+    name: "Concert Series Violin",
+    price: 799.99,
+    imageUrl: "/assets/products/instrument_1.png", // Replace with your actual image paths
+    rating: 4.8,
+    reviewCount: 112,
+  },
+  {
+    id: "inst-006",
+    name: "Professional Cello",
+    price: 2450.0,
+    imageUrl: "/assets/products/instrument_2.png",
+    rating: 4.9,
+    reviewCount: 78,
+  },
+  {
+    id: "inst-007",
+    name: "Classic Acoustic Guitar",
+    price: 499.5,
+    imageUrl: "/assets/products/instrument_3.png",
+    rating: 4.7,
+    reviewCount: 230,
+  },
+  {
+    id: "inst-008",
+    name: "Student Flute Outfit",
+    price: 275.0,
+    imageUrl: "/assets/products/instrument_1.png",
+    rating: 4.5,
+    reviewCount: 95,
+  },
+];

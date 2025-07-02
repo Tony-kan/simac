@@ -6,7 +6,7 @@ const StoreBanner = ({
   subtitle,
 }: IStoreBannerProps) => {
   return (
-    <div className="relative w-full bg-store-banner h-[500px] bg-gradient-to-r  flex items-center justify-center p-4">
+    <section className="relative w-full bg-store-banner h-[500px] bg-gradient-to-r  flex items-center justify-center p-4">
       <div className="absolute inset-0 bg-black opacity-60"></div>
 
       {/* Centered content, positioned above the overlay */}
@@ -28,7 +28,7 @@ const StoreBanner = ({
           styles="bg-white border-2 border-transparent text-black hover:bg-[#FFE3BB] hover:text-[#6C1D45]"
         />
       </div>
-    </div>
+    </section>
   );
 };
 

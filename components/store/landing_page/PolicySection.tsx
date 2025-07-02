@@ -25,7 +25,7 @@ const policies = [
 
 const PolicySection = () => {
   return (
-    <div className="w-full bg-[#FFE3BB] py-12 md:py-10">
+    <section className="w-full bg-[#FFE3BB] py-12 md:py-10">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-center gap-12 md:gap-8 px-4">
         {policies.map((policy) => (
           <div
@@ -42,7 +42,7 @@ const PolicySection = () => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
