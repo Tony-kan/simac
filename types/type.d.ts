@@ -35,3 +35,8 @@ declare interface INewsCardProps {
   excerpt: string;
   category: string;
 }
+
+declare interface IStoreBannerProps {
+  title?: string;
+  subtitle?: string;
+}
