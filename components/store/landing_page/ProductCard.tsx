@@ -4,6 +4,7 @@ import Link from "next/link";
 
 import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 import { NotFoundImage } from "@/constants/images";
+import { validateImageUrl } from "@/lib/utils";
 
 /**
  * A reusable component to render a product card.
@@ -44,17 +45,18 @@ const ProductCard = ({
     }
     return stars;
   };
+  const validImageUrl = validateImageUrl(imageUrl, NotFoundImage);
 
   return (
     <Link href={`/store/instruments/${id}`} passHref>
       <div className="group relative block overflow-hidden transition-shadow duration-300 hover:shadow-lg">
         <div className="relative h-[200px] w-full">
           <Image
-            src={imageUrl || NotFoundImage}
+            src={validImageUrl}
             alt={name}
             fill
-            objectFit="contain"
-            className="transition-transform duration-300 group-hover:scale-105"
+            // objectFit="contain"
+            className="object-contain transition-transform duration-300 group-hover:scale-105"
           />
 
           {/* --- Hover Overlay --- */}
