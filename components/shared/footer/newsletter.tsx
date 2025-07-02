@@ -86,13 +86,13 @@ const Newsletter = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email address"
-            className="bg-white text-black px-10 py-2 rounded-l-md w-full border border-gray-700 focus:outline-none focus:ring-1 focus:ring-orange-300"
+            className="bg-white text-black px-10 py-2 w-full border border-transparent focus:outline-none focus:ring-1 focus:ring-orange-300"
             required
             disabled={isSubmitting}
           />
           <button
             type="submit"
-            className="bg-[#FFE3BB] hover:text-[#5C1B23] text-base text-black px-4 py-2 rounded-r-md font-bold disabled:opacity-50"
+            className="bg-[#FFE3BB] hover:bg-[#5C1B23] hover:text-[#FFE3BB]   text-base text-[#5C1B23] px-4  font-bold disabled:opacity-50"
             disabled={isSubmitting}
           >
             {isSubmitting ? "Sending..." : "Subscribe"}
