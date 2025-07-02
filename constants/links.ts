@@ -51,7 +51,7 @@ export const subNavLinks = [
   {
     id: 3,
     title: "Store",
-    url: "/store",
+    url: "/stores",
   },
 ];
 
@@ -103,6 +103,11 @@ export const footerLinks = [
     title: "FAQs",
     url: "/faq",
   },
+];
+
+export const storeNavLinks = [
+  { id: 1, title: "Instruments", url: "/store/instruments" },
+  { id: 2, title: "Accessories", url: "/store/accessories" },
 ];
 
 // social links like fb, x, etc
