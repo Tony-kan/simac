@@ -51,7 +51,7 @@ export const subNavLinks = [
   {
     id: 3,
     title: "Store",
-    url: "/stores",
+    url: "/store",
   },
 ];
 

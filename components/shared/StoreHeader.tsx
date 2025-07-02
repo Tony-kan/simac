@@ -96,7 +96,7 @@ const StoreHeader = () => {
         {/* Main header content */}
         <div className="container px-6 h-full max-w-screen flex justify-between items-center gap-4">
           <div className="flex-shrink-0 ml-0 lg:ml-8 size-18 md:size-22 lg:size-32">
-            <Link href="/stores" className="block">
+            <Link href="/store" className="block">
               <Image
                 src={Simac_Logo}
                 alt="SIMAC Store Logo"
