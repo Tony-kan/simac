@@ -4,12 +4,14 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { Search, Menu, X } from "lucide-react";
-import Logo from "../ui/logo";
-import SearchBar from "../ui/SearchBar";
+import Logo from "../ui/Store/logo";
+
 import StoreNav from "../ui/StoreNav";
-import UserActions from "../ui/UserAction";
+
 import { AnimatePresence, motion } from "framer-motion";
-import { linkVariants, menuVariants } from "../ui/AnimateStore";
+import { linkVariants, menuVariants } from  "../ui/Store/AnimateStore"
+import SearchBar from "../ui/Store/SearchBar";
+import UserActions from "../ui/Store/UserAction";
 
 
 
@@ -35,7 +37,7 @@ const StoreHeader = () => {
             <Logo width={80} height={80}/>
             <div className="flex items-center gap-4">
                 <button onClick={() => setIsSearchOpen((prev) => !prev)}>
-                <Search size={20}  />
+                {isSearchOpen ? <X size={20} /> : <Search size={20} />}
                 </button>
                 <button onClick={() => setIsMobileMenuOpen((prev) => !prev)}>
                 {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -44,7 +46,19 @@ const StoreHeader = () => {
             </div>
 
             {/* Mobile: Search */}
-            {isSearchOpen && <SearchBar isMobile />}
+            <AnimatePresence>
+                {isSearchOpen && (
+                    <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    >
+                    <SearchBar isMobile />
+                    </motion.div>
+                )}
+            </AnimatePresence>
+    
 
             {/* Desktop Layout */}
             <div className="hidden lg:flex justify-between items-center">

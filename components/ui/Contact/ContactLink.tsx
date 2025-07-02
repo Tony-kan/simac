@@ -1,5 +1,6 @@
 import React from 'react'
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from '../ui/breadcrumb';
+// import CustomBreadcrumb from '../CustomBreadcrumb'
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "../Contact/breadcrumb"
 
 
 const ContactLink = () => {
@@ -18,6 +19,12 @@ const ContactLink = () => {
             </BreadcrumbList>
 
         </Breadcrumb>
+        {/* <Breadcrumb
+            items={[
+                { label: "Home", href: "/" },
+                { label: "Contact", href: "/contact-us" },
+            ]}
+        /> */}
     </div>
   )
 }
