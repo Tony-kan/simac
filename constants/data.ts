@@ -167,3 +167,72 @@ export const instrumentData: IProductCardProps[] = [
     reviewCount: 95,
   },
 ];
+
+export const allAccessories: (IProductCardProps & { category: string })[] = [
+  {
+    id: "acc-str-01",
+    name: "Pro-Arte Violin Strings",
+    price: 34.99,
+    // imageUrl: "/images/strings.jpg", // Replace with your actual image paths
+    imageUrl: "",
+    rating: 4.9,
+    reviewCount: 254,
+    category: "Strings",
+  },
+  {
+    id: "acc-case-01",
+    name: "Hardshell Cello Case",
+    price: 299.0,
+    // imageUrl: "/images/cello-case.jpg",
+    imageUrl: "",
+
+    rating: 4.8,
+    reviewCount: 98,
+    category: "Cases",
+  },
+  {
+    id: "acc-drum-01",
+    name: "Hickory Drumsticks 5A",
+    price: 12.5,
+    // imageUrl: "/images/drumsticks.jpg",
+    imageUrl: "",
+
+    rating: 4.7,
+    reviewCount: 512,
+    category: "Drumsticks",
+  },
+  {
+    id: "acc-cable-01",
+    name: "Braided Guitar Cable (10ft)",
+    price: 19.99,
+    // imageUrl: "/images/cable.jpg",
+    imageUrl: "",
+
+    rating: 4.6,
+    reviewCount: 310,
+    category: "Cables",
+  },
+  // Add more accessories for each category...
+  {
+    id: "acc-str-02",
+    name: "Phosphor Bronze Guitar Strings",
+    price: 15.99,
+    // imageUrl: "/images/guitar-strings.jpg",
+    imageUrl: "",
+
+    rating: 4.8,
+    reviewCount: 830,
+    category: "Strings",
+  },
+  {
+    id: "acc-case-02",
+    name: "Deluxe Violin Case",
+    price: 150.0,
+    // imageUrl: "/images/violin-case.jpg",
+    imageUrl: "",
+
+    rating: 4.9,
+    reviewCount: 150,
+    category: "Cases",
+  },
+];

@@ -9,6 +9,7 @@ import logo4 from "../public/assets/partners_logos/logo_4.svg";
 import logo5 from "../public/assets/partners_logos/logo_5.svg";
 import grace from "../public/grace.jpg";
 import james from "../public/james.jpg";
+import NotFoundImage from "../public/not_found_image.jpeg";
 
 export {
   Simac_Logo,
@@ -17,6 +18,7 @@ export {
   james,
   grace,
   SCaR_Project_Image,
+  NotFoundImage,
 };
 
 export const partnersLogos = [

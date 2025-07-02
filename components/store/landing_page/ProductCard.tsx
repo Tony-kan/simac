@@ -3,24 +3,25 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
+import { NotFoundImage } from "@/constants/images";
 
-  /**
-   * A reusable component to render a product card.
-   *
-   * Props:
-   *   id: string, the unique identifier for the product
-   *   name: string, the name of the product
-   *   price: number, the price of the product
-   *   imageUrl: string, the URL of the product image
-   *   rating: number, the rating of the product (1-5)
-   *   reviewCount: number, the number of reviews for the product
-   *
-   * Features:
-   * - Displays a product image with a hover overlay to "View Details"
-   * - Displays the product name, price, and rating
-   * - Uses Next.js Image for optimized images
-   * - Uses Tailwind CSS for styling
-   */
+/**
+ * A reusable component to render a product card.
+ *
+ * Props:
+ *   id: string, the unique identifier for the product
+ *   name: string, the name of the product
+ *   price: number, the price of the product
+ *   imageUrl: string, the URL of the product image
+ *   rating: number, the rating of the product (1-5)
+ *   reviewCount: number, the number of reviews for the product
+ *
+ * Features:
+ * - Displays a product image with a hover overlay to "View Details"
+ * - Displays the product name, price, and rating
+ * - Uses Next.js Image for optimized images
+ * - Uses Tailwind CSS for styling
+ */
 const ProductCard = ({
   id,
   name,
@@ -49,10 +50,10 @@ const ProductCard = ({
       <div className="group relative block overflow-hidden transition-shadow duration-300 hover:shadow-lg">
         <div className="relative h-[200px] w-full">
           <Image
-            src={imageUrl}
+            src={imageUrl || NotFoundImage}
             alt={name}
-            layout="fill"
-            objectFit="cover"
+            fill
+            objectFit="contain"
             className="transition-transform duration-300 group-hover:scale-105"
           />
 
