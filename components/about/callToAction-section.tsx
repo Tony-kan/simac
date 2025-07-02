@@ -38,7 +38,7 @@ const CallToAction = () => {
         <CustomButton
           as="button"
           btnText="Support Our Mission"
-          styles="bg-[#FFE3BB] hover:bg-yellow-300 hover:text-[#5C1B23] text-[#6C1D45] font-bold py-3 px-6 rounded"
+          // styles="bg-[#FFE3BB] hover:bg-yellow-300 hover:text-[#5C1B23] text-[#6C1D45] font-bold py-3 px-6 rounded"
           handleClick={() => {
             // TODO: Link to donation page
             // Router.push("/donate");
@@ -51,7 +51,7 @@ const CallToAction = () => {
         <CustomButton
           as="button"
           btnText="Explore Our Programs"
-          styles="bg-[#5C1B23] hover:bg-[#5a1839] text-white font-bold py-3 px-6 rounded"
+          styles="bg-[#5C1B23] border border-transparent hover:bg-[#FFE3BB] hover:text-[#5C1B23] hover:border-[#5C1B23] text-white font-bold py-3 px-6 rounded"
           handleClick={() => {
             // TODO: Link program page
             // For navigation, use router.push("/programs") if needed.
