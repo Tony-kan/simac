@@ -7,8 +7,17 @@ import logo2 from "../public/assets/partners_logos/logo_2.svg";
 import logo3 from "../public/assets/partners_logos/logo_3.svg";
 import logo4 from "../public/assets/partners_logos/logo_4.svg";
 import logo5 from "../public/assets/partners_logos/logo_5.svg";
+import grace from "../public/grace.jpg";
+import james from "../public/james.jpg";
 
-export { Simac_Logo, Music_Academy_Image, Culture_Image, SCaR_Project_Image };
+export {
+  Simac_Logo,
+  Music_Academy_Image,
+  Culture_Image,
+  james,
+  grace,
+  SCaR_Project_Image,
+};
 
 export const partnersLogos = [
   { name: "Partner 1", logo: logo1 },
