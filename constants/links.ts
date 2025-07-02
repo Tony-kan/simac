@@ -105,6 +105,11 @@ export const footerLinks = [
   },
 ];
 
+export const storeNavLinks = [
+  { id: 1, title: "Instruments", url: "/store/instruments" },
+  { id: 2, title: "Accessories", url: "/store/accessories" },
+];
+
 // social links like fb, x, etc
 export const socialLinks = [
   {

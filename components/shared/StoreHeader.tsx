@@ -1,178 +1,276 @@
-"use client"
+"use client";
 
-import React, { useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import {Simac_Logo } from "@/constants/images";
-import { Search, ShoppingCart, User,Menu ,X} from 'lucide-react';
+import React, { useEffect, useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { Simac_Logo } from "@/constants/images";
+import { Search, ShoppingCart, User, Menu, X } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { motion, AnimatePresence } from "framer-motion";
+import { storeNavLinks } from "@/constants/links";
 
-//Basic structure for shop header done 
-//remaining some adjustements
-///////////////////////////////////////////////
+// Mobile Menu: Main container slide-in
+const mobileMenuVariants = {
+  closed: { x: "100%" },
+  open: {
+    x: "0%",
+    transition: { type: "tween", ease: "easeInOut", duration: 0.4 },
+  },
+};
 
+// Mobile Menu: Staggered links container
+const mobileLinkContainerVariants = {
+  closed: { transition: { staggerChildren: 0.05, staggerDirection: -1 } },
+  open: { transition: { staggerChildren: 0.07, delayChildren: 0.2 } },
+};
+
+// Mobile Menu: Individual link animation
+const mobileLinkVariants = {
+  closed: { opacity: 0, y: 20 },
+  open: { opacity: 1, y: 0 },
+};
+
+// Header: Nav/Search switch
+const navSearchVariants = {
+  initial: { opacity: 0, y: -10 },
+  animate: { opacity: 1, y: 0, transition: { duration: 0.3 } },
+  exit: { opacity: 0, y: -10, transition: { duration: 0.2 } },
+};
+
+/**
+ * The StoreHeader component is a header component specifically designed for the store pages.
+ * It displays the logo, navigation links, search input, and icons for the cart and account.
+ * On mobile devices, it also includes a mobile-specific menu that overlays the content when opened.
+ *
+ * @returns {JSX.Element}
+ */
 const StoreHeader = () => {
-    
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const [isSearchOpen, setIsSearchOpen]  = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const pathname = usePathname();
 
+  useEffect(() => {
+    document.body.style.overflow = isMobileMenuOpen ? "hidden" : "auto";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isMobileMenuOpen]);
+
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      setIsSearchOpen(false);
+    }
+  }, [isMobileMenuOpen]);
+
+  const NavLink = ({
+    href,
+    children,
+    className = "",
+    onClick = () => {},
+  }: INavLinkProps) => {
+    const isActive = pathname === href;
     return (
-        // Ma Clean code avuta apa Tailwind ai yaiayai
+      <Link
+        href={href}
+        className={`transition-colors duration-300 font-bold ${
+          isActive ? "text-[#5C1B23]" : "text-gray-800 hover:text-[#5C1B23]"
+        } ${className}`}
+        onClick={onClick}
+      >
+        {children}
+      </Link>
+    );
+  };
 
+  return (
+    <>
+      <header className="sticky top-0 bg-white shadow-sm z-40">
+        {/* Top bar shipping info */}
+        <div className="bg-[#5C1B23] py-2 text-center text-xs sm:text-sm text-white">
+          Free shipping over MWK 450, 000 |{" "}
+          <Link href="/shipping-info" className="underline hover:text-gray-200">
+            Learn more
+          </Link>
+        </div>
 
-        <header className="bg-white shadow-sm">
-            {/* Top bar ship info */}
-            
-            <div className="bg-[#5C1B23] py-2 text-center text-sm text-white">
-                Free shipping over MWK 450, 000 | <Link href="/shipping-info" className=" underline">Learn more</Link>
-            </div>
-            
-            {/*main header content */}
+        {/* Main header content */}
+        <div className="container px-6 h-full max-w-screen flex justify-between items-center gap-4">
+          <div className="flex-shrink-0 ml-0 lg:ml-8 size-18 md:size-22 lg:size-32">
+            <Link href="/stores" className="block">
+              <Image
+                src={Simac_Logo}
+                alt="SIMAC Store Logo"
+                width={40}
+                height={40}
+                className="w-auto h-auto"
+              />
+            </Link>
+          </div>
 
-
-        <div className="container mx-auto px-1 py-1">
-
-            {/* mobile top row (logo and menu button)  */}
-
-            <div className="flex items-center justify-between md:hidden">
-                <Link href="/stores" >
-                    <Image
-                        src={Simac_Logo}
-                        alt="Logo"
-                        width={10}
-                        height={10}
-                        className="w-auto h-auto"
-                    />
-                    {/* SIMAC STORE */}
-                </Link>
-
-
-                <div className='flex items-center gap-4'>
-                    <button onClick={() => setIsSearchOpen(!isSearchOpen)} >
-                        <Search size={20} />
-                    </button>
-
-                    <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-                        {isMobileMenuOpen ? <X size={24} />: <Menu size={24} />}
-                    </button>
-
-                    </div>
+          {/* Right side: Navigation, Search, and Icons */}
+          <div className="flex-grow flex justify-end items-center h-full">
+            <div className="hidden md:flex items-center gap-20">
+              <nav className="flex items-center gap-20">
+                {storeNavLinks.map((link) => (
+                  <NavLink key={link.id} href={link.url}>
+                    {link.title}
+                  </NavLink>
+                ))}
+              </nav>
+              <form className="relative">
+                <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                  <Search size={18} className="text-gray-400" />
                 </div>
-
-                {/**Search bar (for mobile ) */}
-
-                {isSearchOpen && (
-                    <div className="md:hidden my-4">
-                        <div className="relative">
-                            <input 
-                                type="text"
-                                placeholder="Search..."
-                                className="bg-gray-200 pl-4 pr-10 py-2 border-gray-400 rounded-md w-full"
-                                autoFocus
-                            />
-                            <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-                        </div>
-                    </div>
-                )}
-
-                {/**Desktop Layout  */}
-                <div className='hidden md:flex md:items-center md:justify-between gap-4' >
-                    {/*logo and navigation */}
-                <div className="flex items-center gap-8">
-                    <Link href="/stores" className="text-xl font-bold">
-                    <Image
-                    src={Simac_Logo}
-                    alt="Logo"
-                    width={40}
-                    height={40}
-                    className="w-auto h-auto"
+                <input
+                  type="search"
+                  placeholder="Search..."
+                  className="w-full max-w-xs pl-9 pr-3 py-2 bg-gray-100 border-2 border-transparent focus:border-[#5C1B23] focus:bg-white focus:outline-none rounded-md transition-colors"
                 />
-                    {/* SIMAC STORE */}
+              </form>
+              <div className="flex items-center gap-10 mr-10">
+                <Link
+                  href="/account"
+                  aria-label="My Account"
+                  className="text-gray-600 hover:text-[#5C1B23] transition-colors"
+                >
+                  <User size={22} />
+                </Link>
+                <Link
+                  href="/cart"
+                  aria-label="Shopping Cart"
+                  className="text-gray-600 hover:text-[#5C1B23] transition-colors relative"
+                >
+                  <ShoppingCart size={22} />
+                </Link>
+              </div>
+            </div>
+
+            {/* --- MOBILE VIEW (up to md) --- */}
+            <div className="md:hidden flex-grow flex justify-end items-center">
+              <AnimatePresence mode="wait">
+                {!isSearchOpen ? (
+                  <motion.div
+                    key="mobile-nav-icons"
+                    variants={navSearchVariants}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                    className="flex items-center gap-6"
+                  >
+                    <button
+                      onClick={() => setIsSearchOpen(true)}
+                      aria-label="Open search"
+                      className="text-gray-600 hover:text-[#5C1B23] transition-colors"
+                    >
+                      <Search size={22} />
+                    </button>
+                    <Link
+                      href="/cart"
+                      aria-label="Shopping Cart"
+                      className="text-gray-600 hover:text-[#5C1B23] transition-colors relative"
+                    >
+                      <ShoppingCart size={22} />
                     </Link>
-
-                    <nav className="flex justify-center gap-10 ">
-                        <Link href="/store/instruments" className="hover:text-[#5C1B23] font-bold">
-                        Instruments
-                        </Link>
-
-                        <Link href="/store/accessories" className="hover:text-[#5C1B23] font-bold">
-                        Accessories
-                        </Link>
-                    </nav>
-                </div>
-
-                {/**Search and icons */}
-                <div className='flex items-center gap-4'>
-                    <div className="relative">
-                        <input 
-                        type="text"
-                        placeholder="Search..."
-                        className="bg-gray-200 pl-4 pr-10 py-2 border-gray-400 rounded-md w-full md:w-64"
-                        />
-
-                        <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-                    </div>
-                    
-                    <div className="flex gap-4">
-
-                        <button className="p-2 hover:text-[#5C1B23]">
-                            <User size={20} />
+                    <Link
+                      href="/account"
+                      aria-label="My Account"
+                      className="text-gray-600 hover:text-[#5C1B23] transition-colors relative"
+                    >
+                      <User size={24} />
+                    </Link>
+                    <button
+                      onClick={() => setIsMobileMenuOpen(true)}
+                      aria-label="Open menu"
+                      className="text-gray-600 hover:text-[#5C1B23] transition-colors"
+                    >
+                      <Menu size={28} />
+                    </button>
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="mobile-search-view"
+                    variants={navSearchVariants}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                    className="w-full"
+                  >
+                    <form className="w-full relative">
+                      <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                        <Search size={20} className="text-gray-400" />
+                      </div>
+                      <input
+                        type="search"
+                        placeholder="Search and press enter..."
+                        className="w-full pl-10 pr-10 py-2 border-2 border-gray-300 focus:border-[#5C1B23] focus:outline-none rounded-md transition-colors"
+                        autoFocus
+                      />
+                      <div className="absolute inset-y-0 right-0 flex items-center pr-2">
+                        <button
+                          onClick={() => setIsSearchOpen(false)}
+                          type="button"
+                          aria-label="Close search"
+                          className="text-gray-500 hover:text-gray-800"
+                        >
+                          <X size={24} />
                         </button>
-
-                        <button className="p-2 hover:text-[#5C1B23] relative">
-                            <ShoppingCart size={20} />
-                            {/* <span className="absolute -top-1 -right-1 bg-[#5C1B23] text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                                0
-                            </span> */}
-                        </button>
-                    </div>
-                </div>
-                </div>
-
-                {/**Mobile menu */}
-                {isMobileMenuOpen && (
-                    <div className='md:hidden mt-4 pb-4 border-t' >
-                        <nav className='flex flex-col gap-4 pt-4' >
-                            <Link 
-                                href="/store/instruments" 
-                                className="hover:text-[#5C1B23] py-2 font-bold"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                                >
-                                Instruments
-                            </Link>
-
-                            <Link 
-                                href="/store/accessories" 
-                                className="hover:text-[#5C1B23] font-bold"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                                >
-                                Accessories
-                            </Link>
-
-                            <div className='flex gap-4 justify-center mt-2'>
-                                <button className="p-2 hover:text-[#5C1B23]">
-                                    <User size={20} />
-                                </button>
-
-                                <button className="p-2 hover:text-[#5C1B23] relative">
-                                    <ShoppingCart size={20} />
-                                    {/* <span className="absolute -top-1 -right-1 bg-[#5C1B23] text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                                        0
-                                    </span> */}
-                                </button>
-
-                            </div>
-
-                        </nav>
-
-
-                    </div>
+                      </div>
+                    </form>
+                  </motion.div>
                 )}
+              </AnimatePresence>
+            </div>
+          </div>
+        </div>
+      </header>
 
-                </div>
-                </header>
-                );
-                };
-
+      {/* --- Mobile Menu Overlay --- */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            variants={mobileMenuVariants}
+            initial="closed"
+            animate="open"
+            exit="closed"
+            className="fixed inset-0 bg-white z-50 flex flex-col md:hidden"
+          >
+            <div className="flex-shrink-0 flex justify-between items-center p-4 border-b">
+              <h2 className="font-bold text-xl">Menu</h2>
+              <button
+                onClick={() => setIsMobileMenuOpen(false)}
+                aria-label="Close menu"
+              >
+                <X size={28} />
+              </button>
+            </div>
+            <nav
+              className="flex-grow flex flex-col justify-between p-6"
+              aria-label="Mobile Navigation"
+            >
+              <motion.div
+                variants={mobileLinkContainerVariants}
+                initial="closed"
+                animate="open"
+                className="space-y-4"
+              >
+                {storeNavLinks.map((link) => (
+                  <motion.div key={link.id} variants={mobileLinkVariants}>
+                    <NavLink
+                      href={link.url}
+                      className="block text-lg py-2"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {link.title}
+                    </NavLink>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
+};
 
 export default StoreHeader;
-
