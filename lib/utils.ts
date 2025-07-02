@@ -11,14 +11,13 @@
 import { StaticImageData } from "next/image";
 
 /**
- * Validates an image URL. If the URL is falsy, it returns a fallback.
- * The fallback can be a string URL or a StaticImageData object.
+ * Validates an image URL. If the URL is falsy (null, undefined, empty string),
+ * it returns a fallback image URL.
  *
  * @param {string | undefined | null} url - The image URL to validate.
- * @param {string | StaticImageData} fallback - The fallback to use if validation fails.
- * @returns {string | StaticImageData} The original URL or the fallback.
+ * @param {string} fallback - The fallback image URL to use if validation fails.
+ * @returns {string} The original URL or the fallback URL.
  */
-
 export const validateImageUrl = (
   url: string | undefined | null,
   fallback: string | StaticImageData
