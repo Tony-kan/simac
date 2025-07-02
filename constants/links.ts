@@ -12,7 +12,7 @@ export const mainNavLinks = [
   {
     id: 3,
     title: "News & Events",
-    url: "/events",
+    url: "/news_events",
   },
   {
     id: 4,
