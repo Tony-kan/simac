@@ -48,7 +48,7 @@ const ProductCard = ({
   const validImageUrl = validateImageUrl(imageUrl, NotFoundImage);
 
   return (
-    <Link href={`/store/instruments/${id}`} passHref>
+    <Link href={`/store/product/${id}`} passHref>
       <div className="group relative block overflow-hidden transition-shadow duration-300 hover:shadow-lg">
         <div className="relative h-[200px] w-full">
           <Image

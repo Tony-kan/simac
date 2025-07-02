@@ -10,6 +10,9 @@ import logo5 from "../public/assets/partners_logos/logo_5.svg";
 import grace from "../public/grace.jpg";
 import james from "../public/james.jpg";
 import NotFoundImage from "../public/not_found_image.jpeg";
+import Instrument1_Image from "../public/assets/products/instrument_1.png";
+import Instrument2_Image from "../public/assets/products/instrument_2.png";
+import Instrument3_Image from "../public/assets/products/instrument_3.png";
 
 export {
   Simac_Logo,
@@ -19,6 +22,9 @@ export {
   grace,
   SCaR_Project_Image,
   NotFoundImage,
+  Instrument1_Image,
+  Instrument2_Image,
+  Instrument3_Image,
 };
 
 export const partnersLogos = [

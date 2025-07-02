@@ -1,6 +1,10 @@
 import {
   Culture_Image,
+  Instrument1_Image,
+  Instrument2_Image,
+  Instrument3_Image,
   Music_Academy_Image,
+  NotFoundImage,
   SCaR_Project_Image,
 } from "@/constants/images";
 
@@ -103,7 +107,7 @@ export const newsData = [
 
 export const instrumentData: IProductCardProps[] = [
   {
-    id: "inst-001",
+    id: "pro-violin-001",
     name: "Concert Series Violin",
     price: 799.99,
     imageUrl: "/assets/products/instrument_1.png", // Replace with your actual image paths
@@ -170,7 +174,7 @@ export const instrumentData: IProductCardProps[] = [
 
 export const allAccessories: (IProductCardProps & { category: string })[] = [
   {
-    id: "acc-str-01",
+    id: "pro-violin-001",
     name: "Pro-Arte Violin Strings",
     price: 34.99,
     // imageUrl: "/images/strings.jpg", // Replace with your actual image paths
@@ -236,3 +240,77 @@ export const allAccessories: (IProductCardProps & { category: string })[] = [
     category: "Cases",
   },
 ];
+
+// This is a mock product data object.
+const MOCK_PRODUCT = {
+  id: "pro-violin-001",
+  name: "Masterpiece Stradivarius Replica Violin",
+  category: "Instruments",
+  price: 1850.0,
+  description:
+    "Handcrafted by master luthiers, this Stradivarius replica offers a rich, resonant tone that is unparalleled at this price point. Made from aged spruce and maple, it's perfect for the advancing student or professional performer. Includes a professional case and bow.",
+  images: [Instrument1_Image, Instrument2_Image, Instrument3_Image],
+  rating: 4.0,
+  reviewCount: 32,
+  reviews: [
+    {
+      id: "rev1",
+      user: "Eliza Day",
+      avatar: NotFoundImage,
+      rating: 5,
+      comment: "Absolutely stunning instrument. The sound is rich and warm.",
+      date: "2023-10-15",
+    },
+    {
+      id: "rev2",
+      user: "John Smith",
+      avatar: NotFoundImage,
+      rating: 4,
+      comment: "Great value for the money. Required a minor setup adjustment.",
+      date: "2023-09-22",
+    },
+    {
+      id: "rev3",
+      user: "Eliza Day",
+      avatar: NotFoundImage,
+      rating: 5,
+      comment: "Absolutely stunning instrument. The sound is rich and warm.",
+      date: "2023-10-15",
+    },
+    {
+      id: "rev4",
+      user: "John Smith",
+      avatar: NotFoundImage,
+      rating: 4,
+      comment: "Great value for the money. Required a minor setup adjustment.",
+      date: "2023-09-22",
+    },
+    {
+      id: "rev5",
+      user: "Eliza Day",
+      avatar: NotFoundImage,
+      rating: 5,
+      comment: "Absolutely stunning instrument. The sound is rich and warm.",
+      date: "2023-10-15",
+    },
+    {
+      id: "rev6",
+      user: "John Smith",
+      avatar: NotFoundImage,
+      rating: 4,
+      comment: "Great value for the money. Required a minor setup adjustment.",
+      date: "2023-09-22",
+    },
+  ],
+};
+
+// This function simulates fetching data from an API.
+export const fetchProductById = async (productId: string) => {
+  console.log(`Fetching product with ID: ${productId}`);
+  // In a real app, you'd fetch from your database based on the ID.
+  // Here, we'll just return the mock data if the ID matches.
+  if (productId === MOCK_PRODUCT.id) {
+    return MOCK_PRODUCT;
+  }
+  return null; // Return null if not found
+};

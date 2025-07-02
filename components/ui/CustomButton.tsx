@@ -66,7 +66,7 @@ const CustomButton = (props: CustomButtonProps) => {
      py-3 px-6 rounded-sm text-[#5C1B23] bg-[#FFE3BB]
      transition-all duration-300 ease-in-out
      shadow-lg hover:shadow-xl hover:bg-[#5C1B23] hover:text-[#FFE3BB] 
-     transform hover:scale-105 hover:cursor-pointer active:scale-100`,
+     transform hover:scale-102 hover:cursor-pointer active:scale-100`,
 
     props.isDisabled &&
       "opacity-50 pointer-events-none transform-none shadow-lg",
