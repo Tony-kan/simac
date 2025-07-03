@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 import Footer from "@/components/shared/footer";
 import ContactForm from "@/components/ui/Contact/ContactForm";
 import ContactLink from "@/components/ui/Contact/ContactLink";
@@ -30,24 +30,23 @@ const ContactUsPage = () => {
         {/* <InteractiveMap/> */}
       </section>
 
-      
-      {/* <section className="flex flex-col lg:flex-row items-stretch justify-center py-8 bg-white"> */}
+
       <section className="flex flex-col lg:flex-row w-full h-auto lg:h-[600px] bg-white">
-        {/* <div className="w-full lg:w-1/2 flex items-end justify-center p-0 m-0"> */}
+      
         <div className="w-full lg:w-1/2 flex items-center justify-center">
-        <div className="w-full h-full">
+        <div className="w-full h-full lg:ml-20">
             <ContactForm />
             </div>
       </div>
-      {/* <div className="w-full lg:w-1/2 flex items-end justify-start p-0 m-0"> */}
-       <div className="w-full lg:w-1/2">
+      
+      <div className="w-full lg:w-1/2 h-full relative overflow-hidden  pt-4 pb-6 mr-20">
             <Image
               src={SCaR_Project_Image}
               alt="Contact Us"
               // width={800}
               // height={200}
               quality={100}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover rounded-r"
             />
       </div>
       

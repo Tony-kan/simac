@@ -1,60 +1,73 @@
-import { Send } from 'lucide-react'
-import React from 'react'
+// components/ContactForm.tsx
+"use client";
+import React from "react";
+import { Send } from "lucide-react";
+import FormInput from "./FormInput";
+import { useContactForm } from "@/hooks/useContactForm";
+
 
 const ContactForm = () => {
+    const { form, status, handleChange, handleSubmit } = useContactForm();
+
     return (
-        <div className="w-full h-full p-8">
-        <form className="bg-white border border-gray-300 rounded-lg px-6 pt-6 pb-8 shadow-md">
-        <h2 className="font-bold text-xl mb-4 text-[#5C1B23]">Get in Touch</h2>
+        <div className="w-full h-full pt-4 pb-4">
+        <form
+            onSubmit={handleSubmit}
+            className="bg-white border border-gray-300 rounded-l px-6 pt-6 pb-6 shadow-md"
+        >
+            <h2 className="font-bold text-xl mb-4 text-[#5C1B23]">Get in Touch</h2>
 
-        {/* Name Field */}
-        <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2">Name</label>
-            <input
-                className="border border-gray-300 rounded w-full px-3 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#5C1B23]"
-                type="text"
-                placeholder="Your Name"
+            <FormInput
+            name="name"
+            value={form.name}
+            onChange={handleChange}
+            placeholder="Your Name"
             />
-        </div>
-
-        {/* Email Field */}
-        <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2">Email</label>
-            <input
-                className="border border-gray-300 rounded w-full px-3 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#5C1B23]"
-                type="email"
-                placeholder="your@email.com"
+            <FormInput
+            name="email"
+            type="email"
+            value={form.email}
+            onChange={handleChange}
+            placeholder="your@email.com"
             />
-        </div>
-
-        {/* Subject Field */}
-        <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2">Subject</label>
-            <input
-                className="border border-gray-300 rounded w-full px-3 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#5C1B23]"
-                type="text"
-                placeholder="Subject"
+            <FormInput
+            name="subject"
+            value={form.subject}
+            onChange={handleChange}
+            placeholder="Subject"
             />
-        </div>
 
-        {/* Message Field */}
-        <div className="mb-4">
+            <div className="mb-4">
             <label className="block text-gray-700 text-sm font-bold mb-2">Message</label>
             <textarea
+                name="message"
+                value={form.message}
+                onChange={handleChange}
                 placeholder="Write your message here..."
                 className="border border-gray-300 rounded w-full px-3 py-2 h-28 resize-none focus:outline-none focus:ring-2 focus:ring-[#5C1B23]"
+                required
             />
-        </div>
+            </div>
 
-        {/* Submit Button */}
-        <div className="flex items-center justify-center gap-2 bg-[#5C1B23] hover:bg-[#7c7c7c] text-white py-3 rounded cursor-pointer">
+            {status.text && (
+            <div className={`mb-4 text-sm ${status.isError ? "text-red-600" : "text-green-600"}`}>
+                {status.text}
+            </div>
+            )}
+
+            <button
+            type="submit"
+            disabled={status.loading}
+            className="flex items-center justify-center gap-2 bg-[#5C1B23] hover:bg-[#7c7c7c] text-white py-3 rounded w-full disabled:opacity-50 disabled:cursor-not-allowed"
+            >
             <Send />
-            <button type="button" className="font-medium">Send Message</button>
+            <span className="font-medium">
+                {status.loading ? "Sending..." : "Send Message"}
+            </span>
+            </button>
+        </form>
         </div>
-    </form>
-</div>
+    );
+    };
 
-    )
-}
-
-export default ContactForm
+    export default ContactForm;
