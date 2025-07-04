@@ -1,28 +1,40 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import { FaStar } from "react-icons/fa";
 import CustomButton from "@/components/ui/CustomButton";
 
 // --- TYPE DEFINITIONS ---
-interface Review {
-  id: string;
-  user: string;
-  avatar: string | StaticImageData;
-  rating: number;
-  comment: string;
-  date: string;
-}
-
-interface CustomerReviewsProps {
-  reviews: Review[];
-}
 
 const REVIEWS_PER_PAGE = 3;
 
-// --- MAIN COMPONENT ---
-const CustomerReviews: React.FC<CustomerReviewsProps> = ({ reviews }) => {
+
+
+/**
+ * CustomerReviews component renders a section displaying customer reviews
+ * for a product, along with a form for submitting new reviews.
+ *
+ * Features:
+ * - Displays the average rating and total number of reviews.
+ * - Allows users to submit a review with a name, email, rating, title, and comment.
+ * - Shows a list of reviews with pagination control to navigate through them.
+ * - Uses React hooks to manage form state, ratings, and pagination.
+ *
+ * Props:
+ * - reviews: Array of review objects containing user, avatar, rating, comment, and date.
+ *
+ * State:
+ * - isFormOpen: Boolean to toggle the review submission form.
+ * - currentPage: Current page for paginated reviews.
+ * - formRating, hoverRating: Ratings for the review form.
+ * - name, email, title, reviewText: Fields for the review submission form.
+ *
+ * Handlers:
+ * - handleFormSubmit: Submits a new review and resets the form state.
+ */
+
+const CustomerReviews = ({ reviews }: ICustomerReviewsProps) => {
   // --- STATE MANAGEMENT ---
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);

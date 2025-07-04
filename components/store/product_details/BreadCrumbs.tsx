@@ -1,12 +1,21 @@
 import React from "react";
 import Link from "next/link";
 
-interface BreadcrumbsProps {
+interface IBreadcrumbsProps {
   category: string;
   productName: string;
 }
 
-const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ category, productName }) => {
+/**
+ * Breadcrumbs component renders a navigation bar with links to the store
+ * and current product category and name.
+ *
+ * @param {IBreadcrumbsProps} props - Optional props for the component.
+ * @param {string} props.category - The category of the product.
+ * @param {string} props.productName - The name of the product.
+ * @returns {React.ReactElement} The rendered component.
+ */
+const Breadcrumbs = ({ category, productName }: IBreadcrumbsProps) => {
   return (
     <nav
       aria-label="Breadcrumb"

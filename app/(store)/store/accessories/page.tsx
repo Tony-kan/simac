@@ -1,20 +1,24 @@
-// import React from "react";
-
-// const AccessoriesPage = () => {
-//   return <div>AccessoriesPage</div>;
-// };
-
-// export default AccessoriesPage;
-
-"use client"; // This must be a client component
+"use client";
 
 import React, { useState, useMemo } from "react";
 import Breadcrumbs from "@/components/store/product_details/BreadCrumbs";
 import FilterSortBar from "@/components/store/shared/FilterSortBar";
 import ProductGrid from "@/components/store/shared/ProductGrid";
-// import { accessoriesData } from "@/constants/data";
 import { ISortOption } from "@/types";
 import { allAccessories } from "@/constants/data";
+
+/**
+ * AccessoriesPage component renders a page displaying all available accessories.
+ *
+ * This component features:
+ *   1. A breadcrumbs navigation component.
+ *   2. A heading with a title and a tagline.
+ *   3. A section for filters and sorting.
+ *   4. A product display section with paginated navigation.
+ *
+ * The component is styled with a responsive layout to adapt to different screen sizes.
+ * It does not manage any state or side effects, focusing solely on rendering the UI.
+ */
 
 const AccessoriesPage = () => {
   const [sortOption, setSortOption] = useState<ISortOption>("newest");

@@ -7,6 +7,18 @@ import ProductGrid from "@/components/store/shared/ProductGrid";
 import { instrumentData } from "@/constants/data";
 import { ISortOption } from "@/types";
 
+/**
+ * InstrumentsPage component renders a page displaying all available instruments.
+ *
+ * This component features:
+ *   1. A breadcrumbs navigation component.
+ *   2. A heading with a title and a tagline.
+ *   3. A section for filters and sorting.
+ *   4. A product display section with paginated navigation.
+ *
+ * The component is styled with a responsive layout to adapt to different screen sizes.
+ * It does not manage any state or side effects, focusing solely on rendering the UI.
+ */
 const InstrumentsPage = () => {
   const [sortOption, setSortOption] = useState<ISortOption>("newest");
 
