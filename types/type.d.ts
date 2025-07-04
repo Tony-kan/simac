@@ -35,3 +35,18 @@ declare interface INewsCardProps {
   excerpt: string;
   category: string;
 }
+
+declare interface IStoreBannerProps {
+  title?: string;
+  subtitle?: string;
+}
+
+declare interface IProductCardProps {
+  id: string;
+  name: string;
+  price: number;
+  imageUrl: string;
+  rating: number;
+  reviewCount: number;
+  // href: string;
+}
