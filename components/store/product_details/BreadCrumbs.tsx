@@ -33,7 +33,9 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ category, productName }) => {
             <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
           </svg>
         </li>
-        <li className="font-extrabold truncate">{productName}</li>
+        <li className="font-extrabold text-sm md:text-md lg:text-lg">
+          {productName}
+        </li>
       </ol>
     </nav>
   );
