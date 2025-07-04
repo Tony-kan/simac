@@ -6,6 +6,22 @@ import { fetchProductById } from "@/constants/data";
 import React from "react";
 import { notFound } from "next/navigation";
 
+/**
+ * Renders the product view page.
+ *
+ * This asynchronous function fetches product data using the provided `productId`
+ * and displays the product details, including breadcrumbs, image gallery, product
+ * information, and customer reviews.
+ *
+ * If the product does not exist, it redirects to a 404 page.
+ *
+ * @param {Object} params - The parameters object.
+ * @param {Promise<{ productId: string }>} params.params - A promise that resolves
+ *   to an object containing the `productId`.
+ *
+ * @returns {React.ReactElement} The rendered product view page component.
+ */
+
 const ProductViewPage = async ({
   params,
 }: {

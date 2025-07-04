@@ -51,7 +51,42 @@ declare interface IProductCardProps {
   createdAt: string;
 }
 
-interface ProductGridProps {
+interface IProductGridProps {
   products: IProductCardProps[];
   itemsPerPage?: number;
 }
+
+interface IFilterSortBarProps {
+  sortOption: ISortOption;
+  setSortOption: (option: ISortOption) => void;
+}
+
+interface IProductImageGalleryProps {
+  images: string[] | StaticImageData[];
+  productName: string;
+}
+
+interface IProductDetailsProps {
+  product: {
+    id: string;
+    name: string;
+    price: number;
+    description: string;
+    rating: number;
+    reviewCount: number;
+  };
+}
+
+interface IReview {
+  id: string;
+  user: string;
+  avatar: string | StaticImageData;
+  rating: number;
+  comment: string;
+  date: string;
+}
+
+interface ICustomerReviewsProps {
+  reviews: Review[];
+}
+

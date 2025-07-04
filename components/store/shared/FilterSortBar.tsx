@@ -1,15 +1,7 @@
 import { ISortOption } from "@/types";
 import React from "react";
 
-interface FilterSortBarProps {
-  sortOption: ISortOption;
-  setSortOption: (option: ISortOption) => void;
-}
-
-const FilterSortBar: React.FC<FilterSortBarProps> = ({
-  sortOption,
-  setSortOption,
-}) => {
+const FilterSortBar = ({ sortOption, setSortOption }: IFilterSortBarProps) => {
   return (
     <div className="flex justify-end items-center">
       <div className="flex items-center md:space-x-2 md:px-6">

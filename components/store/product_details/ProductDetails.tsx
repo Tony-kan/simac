@@ -2,19 +2,22 @@ import React from "react";
 import { FaStar } from "react-icons/fa";
 import ProductActions from "./ProductActions";
 
-// Assuming product data structure matches the mock
-interface ProductDetailsProps {
-  product: {
-    id: string;
-    name: string;
-    price: number;
-    description: string;
-    rating: number;
-    reviewCount: number;
-  };
-}
-
-const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
+/**
+ * ProductDetails component renders a section displaying product details.
+ *
+ * This component renders:
+ *   1. Product name in a large font
+ *   2. Product price in a large font
+ *   3. Product rating (as stars)
+ *   4. Product description in a regular font
+ *   5. Action buttons (quantity, add to cart, etc.)
+ *
+ * @param {object} props The component props
+ * @param {IProductDetailsProps} props.product The product data object
+ *
+ * @returns {React.ReactElement} The rendered component
+ */
+const ProductDetails = ({ product }: IProductDetailsProps) => {
   return (
     <section>
       <h1 className="text-3xl font-bold tracking-tight text-gray-900">

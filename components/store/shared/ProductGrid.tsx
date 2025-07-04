@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import ProductCard from "@/components/store/landing_page/ProductCard";
 
-const ProductGrid: React.FC<ProductGridProps> = ({
-  products,
-  itemsPerPage = 8,
-}) => {
+/**
+ * Renders a grid of product cards with pagination controls.
+ *
+ * @param {object} props The component props
+ * @param {IProductCardProps[]} props.products An array of product data objects
+ * @param {number} [props.itemsPerPage=8] The number of products to display per page
+ */
+const ProductGrid = ({ products, itemsPerPage = 8 }: IProductGridProps) => {
   const [currentPage, setCurrentPage] = useState(1);
 
   // --- Pagination Logic ---
