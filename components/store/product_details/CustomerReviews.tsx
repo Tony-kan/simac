@@ -1,0 +1,272 @@
+"use client";
+
+import React, { useState, useMemo } from "react";
+import Image from "next/image";
+import { FaStar } from "react-icons/fa";
+import CustomButton from "@/components/ui/CustomButton";
+
+// --- TYPE DEFINITIONS ---
+
+const REVIEWS_PER_PAGE = 3;
+
+
+
+/**
+ * CustomerReviews component renders a section displaying customer reviews
+ * for a product, along with a form for submitting new reviews.
+ *
+ * Features:
+ * - Displays the average rating and total number of reviews.
+ * - Allows users to submit a review with a name, email, rating, title, and comment.
+ * - Shows a list of reviews with pagination control to navigate through them.
+ * - Uses React hooks to manage form state, ratings, and pagination.
+ *
+ * Props:
+ * - reviews: Array of review objects containing user, avatar, rating, comment, and date.
+ *
+ * State:
+ * - isFormOpen: Boolean to toggle the review submission form.
+ * - currentPage: Current page for paginated reviews.
+ * - formRating, hoverRating: Ratings for the review form.
+ * - name, email, title, reviewText: Fields for the review submission form.
+ *
+ * Handlers:
+ * - handleFormSubmit: Submits a new review and resets the form state.
+ */
+
+const CustomerReviews = ({ reviews }: ICustomerReviewsProps) => {
+  // --- STATE MANAGEMENT ---
+  const [isFormOpen, setIsFormOpen] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  // Form State
+  const [formRating, setFormRating] = useState(0);
+  const [hoverRating, setHoverRating] = useState(0);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [title, setTitle] = useState("");
+  const [reviewText, setReviewText] = useState("");
+
+  // --- DERIVED STATE & PAGINATION ---
+  const averageRating = useMemo(() => {
+    if (reviews.length === 0) return 0;
+    const total = reviews.reduce((acc, review) => acc + review.rating, 0);
+    return total / reviews.length;
+  }, [reviews]);
+
+  const totalPages = Math.ceil(reviews.length / REVIEWS_PER_PAGE);
+  const currentReviews = reviews.slice(
+    (currentPage - 1) * REVIEWS_PER_PAGE,
+    currentPage * REVIEWS_PER_PAGE
+  );
+
+  // --- HANDLERS ---
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const newReview = { name, email, rating: formRating, title, reviewText };
+    console.log("Submitting review:", newReview);
+
+    setIsFormOpen(false);
+    // Reset form fields
+    setFormRating(0);
+    setName("");
+    setEmail("");
+    setTitle("");
+    setReviewText("");
+  };
+
+  return (
+    <section
+      id="customer-reviews"
+      className=" bg-[#FFE3BB] w-full py-8 md:py-10"
+    >
+      <div className="max-w-4xl mx-auto px-4">
+        <h2 className="text-3xl text-center font-bold tracking-tight text-[#5C1B23] mb-8">
+          Customer Reviews
+        </h2>
+
+        {/* --- 1. OVERALL RATING SUMMARY --- */}
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 p-10 rounded-md bg-[#5C1B23] shadow-md ">
+          <div className="flex-col items-center ">
+            <div className="flex items-center gap-4">
+              <p className="font-semibold  text-white">
+                {averageRating.toFixed(1)}
+              </p>
+              <div className="flex">
+                {[...Array(5)].map((_, i) => (
+                  <FaStar
+                    key={i}
+                    className={
+                      averageRating > i ? "text-yellow-400" : "text-gray-300"
+                    }
+                  />
+                ))}
+              </div>
+            </div>
+
+            <p className=" text-white mt-4">
+              Based on {reviews.length} reviews
+            </p>
+          </div>
+          <CustomButton
+            as="button"
+            btnText={isFormOpen ? "Cancel" : "Write a review"}
+            iconPosition="left"
+            styles="w-full sm:w-auto  border-2 hover:border-[#FFE3BB]"
+            handleClick={() => setIsFormOpen(!isFormOpen)}
+          />
+        </div>
+
+        {/* --- 2. REVIEW SUBMISSION FORM (Conditional) --- */}
+        {isFormOpen && (
+          <form
+            onSubmit={handleFormSubmit}
+            className="mt-8 p-6 rounded-lg bg-white shadow-md"
+          >
+            <h3 className="text-xl font-semibold mb-4">Share your thoughts</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Name & Email */}
+              <input
+                type="text"
+                placeholder="Your Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+                className="w-full h-12 border rounded-sm border-gray-300 shadow-sm flex pl-4 focus:border-[#5C1B23] focus:ring-1 focus:ring-[#5C1B23] focus:outline-none"
+              />
+              <input
+                type="email"
+                placeholder="Your Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="w-full h-12 border rounded-sm border-gray-300 shadow-sm flex pl-4 focus:border-[#5C1B23] focus:ring-1 focus:ring-[#5C1B23] focus:outline-none"
+              />
+            </div>
+            {/* Rating */}
+            <div className="mt-6">
+              <label className="font-medium text-gray-700">Your Rating</label>
+              <div className="flex mt-2 text-2xl cursor-pointer">
+                {[...Array(5)].map((_, index) => {
+                  const ratingValue = index + 1;
+                  return (
+                    <button
+                      type="button"
+                      key={ratingValue}
+                      onClick={() => setFormRating(ratingValue)}
+                      onMouseEnter={() => setHoverRating(ratingValue)}
+                      onMouseLeave={() => setHoverRating(0)}
+                      aria-label={`Rate ${ratingValue} stars`}
+                    >
+                      <FaStar
+                        className={
+                          ratingValue <= (hoverRating || formRating)
+                            ? "text-yellow-400"
+                            : "text-gray-300"
+                        }
+                      />
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+            {/* Title & Review */}
+            <div className="mt-6 space-y-6">
+              <input
+                type="text"
+                placeholder="Title of your review"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                required
+                className="w-full h-12 border rounded-sm border-gray-300 shadow-sm flex p-4 focus:border-[#5C1B23] focus:ring-1 focus:ring-[#5C1B23] focus:outline-none"
+              />
+              <textarea
+                rows={4}
+                placeholder="Write your review here..."
+                value={reviewText}
+                onChange={(e) => setReviewText(e.target.value)}
+                required
+                className="w-full border rounded-sm border-gray-300 shadow-sm flex p-4 focus:border-[#5C1B23] focus:ring-1 focus:ring-[#5C1B23] focus:outline-none"
+              ></textarea>
+            </div>
+            <CustomButton
+              as="button"
+              btnText="Submit Review"
+              iconPosition="left"
+              styles="w-full mt-4"
+              type="submit"
+              handleClick={() => {}}
+            />
+          </form>
+        )}
+
+        {/* --- 3. REVIEWS LIST & PAGINATION --- */}
+        <div className="mt-6">
+          {currentReviews.map((review) => (
+            <div
+              key={review.id}
+              className="flex gap-4 mt-2  px-6  bg-white border-red-500  rounded-sm py-6"
+            >
+              <Image
+                src={review.avatar}
+                alt={review.user}
+                width={48}
+                height={48}
+                className="rounded-full h-12 w-12 object-cover"
+              />
+              <div className="flex-1">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="font-semibold text-gray-900">{review.user}</p>
+                    <p className="mt-2 text-xs text-gray-800">{review.date}</p>
+                  </div>
+
+                  <div className="ml-4 flex">
+                    {[...Array(5)].map((_, i) => (
+                      <FaStar
+                        key={i}
+                        className={
+                          review.rating > i
+                            ? "text-yellow-400"
+                            : "text-gray-300"
+                        }
+                      />
+                    ))}
+                  </div>
+                </div>
+                <p className="mt-2 text-gray-700">{review.comment}</p>
+              </div>
+            </div>
+          ))}
+
+          {/* Pagination Controls */}
+          {totalPages > 1 && (
+            <div className="mt-6 flex justify-between items-center">
+              <button
+                onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+                disabled={currentPage === 1}
+                className="rounded-sm bg-white border-2 border-transparent px-4 py-2 text-sm font-bold text-[#5C1B23] hover:bg-gray-50 hover:border-[#5C1B23] disabled:opacity-50"
+              >
+                Previous
+              </button>
+              <span className="text-sm  font-bold text-black">
+                Page {currentPage} of {totalPages}
+              </span>
+              <button
+                onClick={() =>
+                  setCurrentPage((p) => Math.min(totalPages, p + 1))
+                }
+                disabled={currentPage === totalPages}
+                className="rounded-sm bg-white border-2 border-transparent px-4 py-2 text-sm font-bold text-[#5C1B23] hover:bg-gray-50  hover:border-[#5C1B23] disabled:opacity-50"
+              >
+                Next
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default CustomerReviews;
