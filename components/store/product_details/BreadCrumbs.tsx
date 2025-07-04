@@ -8,8 +8,11 @@ interface BreadcrumbsProps {
 
 const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ category, productName }) => {
   return (
-    <nav aria-label="Breadcrumb" className="mb-6">
-      <ol className="flex items-center space-x-2 text-sm text-gray-500">
+    <nav
+      aria-label="Breadcrumb"
+      className="flex px-4 md:px-8  mb-6 bg-[#FFE3BB] items-center  h-14 md:h-16 lg:h-24"
+    >
+      <ol className="flex items-center space-x-1  font-bold text-sm md:text-md lg:text-lg text-[#5C1B23]">
         <li>
           <Link href="/store">
             <div className="hover:text-gray-700">Store</div>
@@ -30,7 +33,7 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ category, productName }) => {
             <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
           </svg>
         </li>
-        <li className="font-medium text-gray-800 truncate">{productName}</li>
+        <li className="font-extrabold truncate">{productName}</li>
       </ol>
     </nav>
   );

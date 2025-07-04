@@ -21,9 +21,8 @@ const ProductViewPage = async ({
   }
   return (
     <section className="h-full min-h-screen">
+      <Breadcrumbs category={product.category} productName={product.name} />
       <div className="max-w-2xl mx-auto py-10 px-4 sm:py-6 sm:px-6 lg:max-w-7xl lg:px-8">
-        <Breadcrumbs category={product.category} productName={product.name} />
-
         <div className="lg:grid lg:grid-cols-2 lg:gap-x-12 lg:items-start">
           {/* Left Column: Image Gallery */}
           <ProductImageGallery

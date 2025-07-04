@@ -1,4 +1,5 @@
-// // datae or time formatting
+//Todo:  function to format  currency,date
+
 // export const formatDate = (date: string) => {
 //   const options: Intl.DateTimeFormatOptions = {
 //     year: "numeric",

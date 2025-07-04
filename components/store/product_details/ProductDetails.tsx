@@ -22,7 +22,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
       </h1>
 
       <p className="mt-6 text-3xl text-gray-900">
-        MWK{product.price.toFixed(2)}
+        MWK {product.price.toFixed(2)}
       </p>
 
       {/* Rating */}

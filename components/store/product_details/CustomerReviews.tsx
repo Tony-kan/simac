@@ -66,18 +66,20 @@ const CustomerReviews: React.FC<CustomerReviewsProps> = ({ reviews }) => {
   return (
     <section
       id="customer-reviews"
-      className="mt-16 bg-[#FFE3BB] w-full py-12 md:py-16"
+      className=" bg-[#FFE3BB] w-full py-8 md:py-10"
     >
       <div className="max-w-4xl mx-auto px-4">
-        <h2 className="text-3xl text-center font-bold tracking-tight text-gray-900 mb-8">
+        <h2 className="text-3xl text-center font-bold tracking-tight text-[#5C1B23] mb-8">
           Customer Reviews
         </h2>
 
         {/* --- 1. OVERALL RATING SUMMARY --- */}
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 p-4 rounded-lg bg-gray-50 border">
-          <div className="flex-col items-center gap-2">
-            <div className="flex items-center gap-2">
-              <p className="font-semibold">{averageRating.toFixed(1)}</p>
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 p-10 rounded-md bg-[#5C1B23] shadow-md ">
+          <div className="flex-col items-center ">
+            <div className="flex items-center gap-4">
+              <p className="font-semibold  text-white">
+                {averageRating.toFixed(1)}
+              </p>
               <div className="flex">
                 {[...Array(5)].map((_, i) => (
                   <FaStar
@@ -90,13 +92,15 @@ const CustomerReviews: React.FC<CustomerReviewsProps> = ({ reviews }) => {
               </div>
             </div>
 
-            <p className="text-gray-600">Based on {reviews.length} reviews</p>
+            <p className=" text-white mt-4">
+              Based on {reviews.length} reviews
+            </p>
           </div>
           <CustomButton
             as="button"
             btnText={isFormOpen ? "Cancel" : "Write a review"}
             iconPosition="left"
-            styles="w-full sm:w-auto"
+            styles="w-full sm:w-auto  border-2 hover:border-[#FFE3BB]"
             handleClick={() => setIsFormOpen(!isFormOpen)}
           />
         </div>
@@ -105,7 +109,7 @@ const CustomerReviews: React.FC<CustomerReviewsProps> = ({ reviews }) => {
         {isFormOpen && (
           <form
             onSubmit={handleFormSubmit}
-            className="mt-8 p-6 border rounded-lg bg-white shadow-md"
+            className="mt-8 p-6 rounded-lg bg-white shadow-md"
           >
             <h3 className="text-xl font-semibold mb-4">Share your thoughts</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -185,9 +189,12 @@ const CustomerReviews: React.FC<CustomerReviewsProps> = ({ reviews }) => {
         )}
 
         {/* --- 3. REVIEWS LIST & PAGINATION --- */}
-        <div className="mt-12">
+        <div className="mt-6">
           {currentReviews.map((review) => (
-            <div key={review.id} className="flex gap-4 border-t py-6">
+            <div
+              key={review.id}
+              className="flex gap-4 mt-2  px-6  bg-white border-red-500  rounded-sm py-6"
+            >
               <Image
                 src={review.avatar}
                 alt={review.user}
@@ -196,8 +203,12 @@ const CustomerReviews: React.FC<CustomerReviewsProps> = ({ reviews }) => {
                 className="rounded-full h-12 w-12 object-cover"
               />
               <div className="flex-1">
-                <div className="flex items-center">
-                  <p className="font-semibold text-gray-900">{review.user}</p>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="font-semibold text-gray-900">{review.user}</p>
+                    <p className="mt-2 text-xs text-gray-800">{review.date}</p>
+                  </div>
+
                   <div className="ml-4 flex">
                     {[...Array(5)].map((_, i) => (
                       <FaStar
@@ -212,7 +223,6 @@ const CustomerReviews: React.FC<CustomerReviewsProps> = ({ reviews }) => {
                   </div>
                 </div>
                 <p className="mt-2 text-gray-700">{review.comment}</p>
-                <p className="mt-2 text-xs text-gray-500">{review.date}</p>
               </div>
             </div>
           ))}
@@ -223,11 +233,11 @@ const CustomerReviews: React.FC<CustomerReviewsProps> = ({ reviews }) => {
               <button
                 onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
                 disabled={currentPage === 1}
-                className="rounded-md bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 disabled:opacity-50"
+                className="rounded-sm bg-white border-2 border-transparent px-4 py-2 text-sm font-bold text-[#5C1B23] hover:bg-gray-50 hover:border-[#5C1B23] disabled:opacity-50"
               >
                 Previous
               </button>
-              <span className="text-sm text-gray-600">
+              <span className="text-sm  font-bold text-black">
                 Page {currentPage} of {totalPages}
               </span>
               <button
@@ -235,7 +245,7 @@ const CustomerReviews: React.FC<CustomerReviewsProps> = ({ reviews }) => {
                   setCurrentPage((p) => Math.min(totalPages, p + 1))
                 }
                 disabled={currentPage === totalPages}
-                className="rounded-md bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 disabled:opacity-50"
+                className="rounded-sm bg-white border-2 border-transparent px-4 py-2 text-sm font-bold text-[#5C1B23] hover:bg-gray-50  hover:border-[#5C1B23] disabled:opacity-50"
               >
                 Next
               </button>
