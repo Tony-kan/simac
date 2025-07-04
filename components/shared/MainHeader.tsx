@@ -144,7 +144,7 @@ const MainHeader = () => {
 
   return (
     <>
-      <header className="relative border-b border-gray-300  bg-white h-[12vh] min-h-[80px] lg:h-[18vh] lg:min-h-[120px] shadow-sm">
+      <header className="relative bg-white h-[12vh] min-h-[80px] lg:h-[18vh] lg:min-h-[120px] shadow-sm">
         {/* Desktop header  */}
         <div className="container px-6 h-full max-w-screen flex justify-between items-center gap-4">
           <div className="flex-shrink-0 ml-0 lg:ml-8 size-18 md:size-22 lg:size-32">
