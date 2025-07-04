@@ -105,6 +105,46 @@ export const newsData = [
   },
 ];
 
+// export const instrumentData: IProductCardProps[] = [
+//   {
+//     id: "pro-violin-001",
+//     name: "Concert Series Violin",
+//     price: 799.99,
+//     imageUrl: "/assets/products/instrument_1.png",
+//     rating: 4.8,
+//     reviewCount: 112,
+//     dateAdded: "2024-03-15",
+//   },
+//   {
+//     id: "inst-002",
+//     name: "Professional Cello",
+//     price: 2450.0,
+//     imageUrl: "/assets/products/instrument_2.png",
+//     rating: 4.9,
+//     reviewCount: 78,
+//     dateAdded: "2024-02-20",
+//   },
+//   {
+//     id: "inst-003",
+//     name: "Classic Acoustic Guitar",
+//     price: 499.5,
+//     imageUrl: "/assets/products/instrument_3.png",
+//     rating: 4.7,
+//     reviewCount: 230,
+//     dateAdded: "2023-12-01",
+//   },
+//   {
+//     id: "inst-004",
+//     name: "Student Flute Outfit",
+//     price: 275.0,
+//     imageUrl: "/assets/products/instrument_1.png",
+//     rating: 4.5,
+//     reviewCount: 95,
+//     dateAdded: "2024-01-10",
+//   },
+//   // ... more instruments
+// ];
+
 export const instrumentData: IProductCardProps[] = [
   {
     id: "pro-violin-001",
@@ -112,6 +152,7 @@ export const instrumentData: IProductCardProps[] = [
     price: 799.99,
     imageUrl: "/assets/products/instrument_1.png", // Replace with your actual image paths
     rating: 4.8,
+    createdAt: "2024-03-15",
     reviewCount: 112,
   },
   {
@@ -120,6 +161,7 @@ export const instrumentData: IProductCardProps[] = [
     price: 2450.0,
     imageUrl: "/assets/products/instrument_2.png",
     rating: 4.9,
+    createdAt: "2024-02-20",
     reviewCount: 78,
   },
   {
@@ -128,6 +170,7 @@ export const instrumentData: IProductCardProps[] = [
     price: 499.5,
     imageUrl: "/assets/products/instrument_3.png",
     rating: 4.7,
+    createdAt: "2023-12-01",
     reviewCount: 230,
   },
   {
@@ -137,6 +180,7 @@ export const instrumentData: IProductCardProps[] = [
     imageUrl: "/assets/products/instrument_1.png",
     rating: 2.5,
     reviewCount: 95,
+    createdAt: "2024-01-10",
   },
   {
     id: "inst-005",
@@ -144,6 +188,7 @@ export const instrumentData: IProductCardProps[] = [
     price: 799.99,
     imageUrl: "/assets/products/instrument_1.png", // Replace with your actual image paths
     rating: 4.8,
+    createdAt: "2024-03-15",
     reviewCount: 112,
   },
   {
@@ -152,6 +197,7 @@ export const instrumentData: IProductCardProps[] = [
     price: 2450.0,
     imageUrl: "/assets/products/instrument_2.png",
     rating: 4.9,
+    createdAt: "2024-02-20",
     reviewCount: 78,
   },
   {
@@ -160,6 +206,7 @@ export const instrumentData: IProductCardProps[] = [
     price: 499.5,
     imageUrl: "/assets/products/instrument_3.png",
     rating: 4.7,
+    createdAt: "2024-03-15",
     reviewCount: 230,
   },
   {
@@ -168,6 +215,7 @@ export const instrumentData: IProductCardProps[] = [
     price: 275.0,
     imageUrl: "/assets/products/instrument_1.png",
     rating: 4.5,
+    createdAt: "2024-02-20",
     reviewCount: 95,
   },
 ];
@@ -181,6 +229,8 @@ export const allAccessories: (IProductCardProps & { category: string })[] = [
     imageUrl: "",
     rating: 4.9,
     reviewCount: 254,
+    createdAt: "2024-03-01",
+
     category: "Strings",
   },
   {
@@ -192,6 +242,7 @@ export const allAccessories: (IProductCardProps & { category: string })[] = [
 
     rating: 4.8,
     reviewCount: 98,
+    createdAt: "2023-11-15",
     category: "Cases",
   },
   {
@@ -203,6 +254,7 @@ export const allAccessories: (IProductCardProps & { category: string })[] = [
 
     rating: 4.7,
     reviewCount: 512,
+    createdAt: "2024-02-05",
     category: "Drumsticks",
   },
   {
@@ -214,6 +266,7 @@ export const allAccessories: (IProductCardProps & { category: string })[] = [
 
     rating: 4.6,
     reviewCount: 310,
+    createdAt: "2023-10-22",
     category: "Cables",
   },
   // Add more accessories for each category...
@@ -226,6 +279,7 @@ export const allAccessories: (IProductCardProps & { category: string })[] = [
 
     rating: 4.8,
     reviewCount: 830,
+    createdAt: "2023-10-12",
     category: "Strings",
   },
   {
@@ -237,6 +291,7 @@ export const allAccessories: (IProductCardProps & { category: string })[] = [
 
     rating: 4.9,
     reviewCount: 150,
+    createdAt: "2023-10-27",
     category: "Cases",
   },
 ];
