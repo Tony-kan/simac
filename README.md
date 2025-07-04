@@ -8,7 +8,7 @@ This repository contains the source code for the official website of the **Simmy
 
 ## SIMAC Website Screenshot
 
-<img src="/public/simac_screenshot.png" width="720" height="576" />
+<img src="/public/simac_screenshot.png" width="800" height="600" />
 
 ## 📋 Table of Contents
 
@@ -25,11 +25,11 @@ This repository contains the source code for the official website of the **Simmy
 
 ## 🌟 Project Overview
 
-SIMAC is dedicated to nurturing creativity, preserving cultural heritage, and fostering excellence in music, arts, and culture education. This website provides a comprehensive platform to showcase our programs, manage events, share news, and collect donations to support our cause, including the **Saving Children at Risk (SCaR) Project**.
+SIMAC is dedicated to nurturing creativity, preserving cultural heritage, and fostering excellence in music, arts, and culture education. This website provides a comprehensive platform to showcase the programs, manage events, share news, and collect donations to support Simac's cause, including the **Saving Children at Risk (SCaR) Project**.
 
 ## ✨ Features
 
-- ✅ **Dynamic Content:** Pages for Home, About, Affiliates, Programs, Events, Blog, and News.
+- ✅ **Dynamic Content:** Pages for Home, About, Affiliates, Programs, Events, Blog,Gallery,Store(E-commence section) and News.
 - 📅 **Event Management:** An event calendar with details for upcoming workshops and concerts, including RSVP functionality.
 - 💳 **Secure Donation System:** Integrated payment gateway for one-time and recurring donations to support specific programs or general funds.
 - 🛍️ **E-commerce Store:** A dedicated section for selling musical instruments and branded merchandise.
@@ -61,13 +61,13 @@ Make sure you have the following installed on your system:
 1.  **Clone the repository:**
 
     ```sh
-    git clone https://github.com/your-username/simac-website.git
+    git clone https://github.com/Tony-kan/simac.git
     ```
 
 2.  **Navigate into the project directory:**
 
     ```sh
-    cd simac-website
+    cd simac
     ```
 
 3.  **Install dependencies:**
