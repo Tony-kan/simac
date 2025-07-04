@@ -48,5 +48,10 @@ declare interface IProductCardProps {
   imageUrl: string;
   rating: number;
   reviewCount: number;
-  // href: string;
+  createdAt: string;
+}
+
+interface ProductGridProps {
+  products: IProductCardProps[];
+  itemsPerPage?: number;
 }
