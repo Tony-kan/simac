@@ -1,6 +1,10 @@
 import {
   Culture_Image,
+  Instrument1_Image,
+  Instrument2_Image,
+  Instrument3_Image,
   Music_Academy_Image,
+  NotFoundImage,
   SCaR_Project_Image,
 } from "@/constants/images";
 
@@ -100,3 +104,213 @@ export const newsData = [
     category: "Community",
   },
 ];
+
+export const instrumentData: IProductCardProps[] = [
+  {
+    id: "pro-violin-001",
+    name: "Concert Series Violin",
+    price: 799.99,
+    imageUrl: "/assets/products/instrument_1.png", // Replace with your actual image paths
+    rating: 4.8,
+    reviewCount: 112,
+  },
+  {
+    id: "inst-002",
+    name: "Professional Cello",
+    price: 2450.0,
+    imageUrl: "/assets/products/instrument_2.png",
+    rating: 4.9,
+    reviewCount: 78,
+  },
+  {
+    id: "inst-003",
+    name: "Classic Acoustic Guitar",
+    price: 499.5,
+    imageUrl: "/assets/products/instrument_3.png",
+    rating: 4.7,
+    reviewCount: 230,
+  },
+  {
+    id: "inst-004",
+    name: "Student Flute Outfit",
+    price: 275.0,
+    imageUrl: "/assets/products/instrument_1.png",
+    rating: 2.5,
+    reviewCount: 95,
+  },
+  {
+    id: "inst-005",
+    name: "Concert Series Violin",
+    price: 799.99,
+    imageUrl: "/assets/products/instrument_1.png", // Replace with your actual image paths
+    rating: 4.8,
+    reviewCount: 112,
+  },
+  {
+    id: "inst-006",
+    name: "Professional Cello",
+    price: 2450.0,
+    imageUrl: "/assets/products/instrument_2.png",
+    rating: 4.9,
+    reviewCount: 78,
+  },
+  {
+    id: "inst-007",
+    name: "Classic Acoustic Guitar",
+    price: 499.5,
+    imageUrl: "/assets/products/instrument_3.png",
+    rating: 4.7,
+    reviewCount: 230,
+  },
+  {
+    id: "inst-008",
+    name: "Student Flute Outfit",
+    price: 275.0,
+    imageUrl: "/assets/products/instrument_1.png",
+    rating: 4.5,
+    reviewCount: 95,
+  },
+];
+
+export const allAccessories: (IProductCardProps & { category: string })[] = [
+  {
+    id: "pro-violin-001",
+    name: "Pro-Arte Violin Strings",
+    price: 34.99,
+    // imageUrl: "/images/strings.jpg", // Replace with your actual image paths
+    imageUrl: "",
+    rating: 4.9,
+    reviewCount: 254,
+    category: "Strings",
+  },
+  {
+    id: "acc-case-01",
+    name: "Hardshell Cello Case",
+    price: 299.0,
+    // imageUrl: "/images/cello-case.jpg",
+    imageUrl: "",
+
+    rating: 4.8,
+    reviewCount: 98,
+    category: "Cases",
+  },
+  {
+    id: "acc-drum-01",
+    name: "Hickory Drumsticks 5A",
+    price: 12.5,
+    // imageUrl: "/images/drumsticks.jpg",
+    imageUrl: "",
+
+    rating: 4.7,
+    reviewCount: 512,
+    category: "Drumsticks",
+  },
+  {
+    id: "acc-cable-01",
+    name: "Braided Guitar Cable (10ft)",
+    price: 19.99,
+    // imageUrl: "/images/cable.jpg",
+    imageUrl: "",
+
+    rating: 4.6,
+    reviewCount: 310,
+    category: "Cables",
+  },
+  // Add more accessories for each category...
+  {
+    id: "acc-str-02",
+    name: "Phosphor Bronze Guitar Strings",
+    price: 15.99,
+    // imageUrl: "/images/guitar-strings.jpg",
+    imageUrl: "",
+
+    rating: 4.8,
+    reviewCount: 830,
+    category: "Strings",
+  },
+  {
+    id: "acc-case-02",
+    name: "Deluxe Violin Case",
+    price: 150.0,
+    // imageUrl: "/images/violin-case.jpg",
+    imageUrl: "",
+
+    rating: 4.9,
+    reviewCount: 150,
+    category: "Cases",
+  },
+];
+
+// This is a mock product data object.
+const MOCK_PRODUCT = {
+  id: "pro-violin-001",
+  name: "Masterpiece Stradivarius Replica Violin",
+  category: "Instruments",
+  price: 1850.0,
+  description:
+    "Handcrafted by master luthiers, this Stradivarius replica offers a rich, resonant tone that is unparalleled at this price point. Made from aged spruce and maple, it's perfect for the advancing student or professional performer. Includes a professional case and bow.",
+  images: [Instrument1_Image, Instrument2_Image, Instrument3_Image],
+  rating: 4.0,
+  reviewCount: 32,
+  reviews: [
+    {
+      id: "rev1",
+      user: "Eliza Day",
+      avatar: NotFoundImage,
+      rating: 5,
+      comment: "Absolutely stunning instrument. The sound is rich and warm.",
+      date: "2023-10-15",
+    },
+    {
+      id: "rev2",
+      user: "John Smith",
+      avatar: NotFoundImage,
+      rating: 4,
+      comment: "Great value for the money. Required a minor setup adjustment.",
+      date: "2023-09-22",
+    },
+    {
+      id: "rev3",
+      user: "Eliza Day",
+      avatar: NotFoundImage,
+      rating: 5,
+      comment: "Absolutely stunning instrument. The sound is rich and warm.",
+      date: "2023-10-15",
+    },
+    {
+      id: "rev4",
+      user: "John Smith",
+      avatar: NotFoundImage,
+      rating: 4,
+      comment: "Great value for the money. Required a minor setup adjustment.",
+      date: "2023-09-22",
+    },
+    {
+      id: "rev5",
+      user: "Eliza Day",
+      avatar: NotFoundImage,
+      rating: 5,
+      comment: "Absolutely stunning instrument. The sound is rich and warm.",
+      date: "2023-10-15",
+    },
+    {
+      id: "rev6",
+      user: "John Smith",
+      avatar: NotFoundImage,
+      rating: 4,
+      comment: "Great value for the money. Required a minor setup adjustment.",
+      date: "2023-09-22",
+    },
+  ],
+};
+
+// This function simulates fetching data from an API.
+export const fetchProductById = async (productId: string) => {
+  console.log(`Fetching product with ID: ${productId}`);
+  // In a real app, you'd fetch from your database based on the ID.
+  // Here, we'll just return the mock data if the ID matches.
+  if (productId === MOCK_PRODUCT.id) {
+    return MOCK_PRODUCT;
+  }
+  return null; // Return null if not found
+};

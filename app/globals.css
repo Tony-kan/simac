@@ -15,6 +15,11 @@ html {
   background-image: url("/assets/hero_bg_img.png");
 }
 
+.bg-store-banner {
+  --tw-bg-opacity: 1;
+  background-image: url("/assets/store_banner_bg_image.png");
+}
+
 /* In your app/globals.css file */
 
 /* Hide the default 'x' (clear button) on search inputs in WebKit browsers */
