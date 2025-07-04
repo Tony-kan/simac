@@ -34,7 +34,7 @@ const AccessoriesSection = () => {
 
         {/* 5. TABS INTERFACE */}
         <div className="mt-10 flex justify-center border-b border-gray-200">
-          <nav className="-mb-px flex space-x-6" aria-label="Tabs">
+          <nav className="-mb-px flex space-x-2 md:space-x-6" aria-label="Tabs">
             {categories.map((category) => (
               <button
                 key={category}
