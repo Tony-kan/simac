@@ -1,18 +1,27 @@
 "use client";
 
 import React, { useState } from "react";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import { NotFoundImage } from "@/constants/images";
 
-interface ProductImageGalleryProps {
-  images: string[] | StaticImageData[];
-  productName: string;
-}
-
-const ProductImageGallery: React.FC<ProductImageGalleryProps> = ({
+/**
+ * ProductImageGallery
+ *
+ * A component to render a product image gallery.
+ *
+ * Features:
+ * - Displays a main image and a list of thumbnails.
+ * - Thumbnails are clickable and update the main image.
+ * - Uses Next.js Image for optimized images.
+ *
+ * Props:
+ *   images: Array of image URLs.
+ *   productName: string, the name of the product.
+ */
+const ProductImageGallery = ({
   images,
   productName,
-}) => {
+}:IProductImageGalleryProps) => {
   const [mainImage, setMainImage] = useState(images[0] || NotFoundImage);
 
   return (

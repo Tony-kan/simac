@@ -4,11 +4,30 @@ import CustomButton from "@/components/ui/CustomButton";
 import React, { useState } from "react";
 import { FaMinus, FaPlus, FaShoppingCart } from "react-icons/fa";
 
-interface ProductActionsProps {
+interface IProductActionsProps {
   productId: string;
 }
 
-const ProductActions: React.FC<ProductActionsProps> = ({ productId }) => {
+/**
+ * ProductActions component provides UI to adjust product quantity and perform actions.
+ *
+ * This component renders:
+ *   1. A quantity selector with increment and decrement buttons.
+ *   2. Action buttons for adding the product to the cart and proceeding to checkout.
+ *
+ * Props:
+ *   - productId: string, the unique identifier of the product.
+ *
+ * State:
+ *   - quantity: number, the current quantity of the product selected.
+ *
+ * Handlers:
+ *   - handleAddToCart: Logs the action of adding the selected quantity of the product to the cart.
+ *
+ * @returns {React.ReactElement} The rendered component.
+ */
+
+const ProductActions = ({ productId }: IProductActionsProps) => {
   const [quantity, setQuantity] = useState(1);
 
   const handleAddToCart = () => {
